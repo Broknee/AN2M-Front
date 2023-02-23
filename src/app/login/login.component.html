@@ -1,17 +1,17 @@
-<div id="main">
 <div id="header">
-    <h1>Bienvenue sur le gestionnaire AM2N</h1>
+  <h1>Bienvenue sur le gestionnaire AM2N</h1>
 </div>
-<h2>Connexion</h2>
-<div class="form">
-<div id="formConnexion">
-    <form id="connexion">
-        <label>email</label>
-        <input type="text">
-        <label>mot de passe</label>
-        <input type="text">
-        <button id="b_connexion">Connexion</button>
+<div id="main">
+  <img src="../../assets/images/croix.png" />
+  <div id="form_connexion">
+  
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="connexion" >
+      <h2>Connexion</h2>
+      <label>mail</label>
+      <input type="text" formControlName="mail" required/>
+      <label>mot de passe</label>
+      <input type="text" formControlName="mdp" required/>
+      <button id="b_connexion" >Valider</button>
     </form>
-    </div>
-</div>
+  </div>
 </div>

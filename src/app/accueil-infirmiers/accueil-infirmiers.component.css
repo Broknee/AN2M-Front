@@ -1,0 +1,58 @@
+h2 {
+    text-align: center;
+}
+
+#logo {
+    width: 100px;
+    height:100px;
+    margin-right:20px;
+}
+
+.welcomeMessage {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    background-image: url(../../assets/images/staffBackground.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100vw;
+    height: 100vh;
+}
+
+.backgroundOpacity {
+    background-color:rgba(255,255,255, 0.8);    
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.cardAccueil {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 60vh;
+    border-radius: 20px;  
+    margin-top: 5vh;
+}
+
+.cardAccueil:hover {
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.cardAccueil h1 {
+    text-align: center;
+}
+
+.cardAccueil img {
+    width: 200px;
+    position: relative;
+    left: 60px;
+}
