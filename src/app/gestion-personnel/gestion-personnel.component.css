@@ -1,3 +1,6 @@
+
+
+
 h2 {
     text-align: center;
 }
@@ -70,8 +73,4 @@ main {
 
 #ajoutButton {
     height: fit-content;
-}
-
-#liste td {
-padding: 20px;
 }
