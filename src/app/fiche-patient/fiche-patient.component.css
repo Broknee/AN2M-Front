@@ -1,0 +1,110 @@
+
+
+#titre {
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+#recherche {
+    border: 1px solid black;
+    height: fit-content;
+    width: 50vw;
+    display: flex;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2vw;
+    background-color: rgb(217, 217, 217);
+  
+}
+
+#recherche form {
+    padding: 10px;
+    font-size: 25px;
+    margin-right: 50px;
+   
+}
+
+#recherche button {
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(32, 122, 205);
+    color:white;
+    font-size: 20px;
+}
+
+#recherche label,select,input {
+        margin-right: 15px;
+}
+
+main {
+    background-image: url(../../assets/images/staffBackground.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100vw;
+    height: 100vh;
+} 
+
+.backgroundOpacity {
+    background-color:rgba(255,255,255, 0.8);    
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ajoutButton button {
+    background-color: rgb(32, 122, 205);
+    color: white;
+    width: 350px;
+    height: 80px;
+    border-radius: 30px;
+    font-size: 23px;
+}
+
+#ajoutButton {
+   
+    margin: 2vw;
+    height: fit-content;
+}
+
+table {
+    border: black 1px solid;
+    width: 90vw;
+    border-spacing: 0px 10px;
+    font-size: 25px;
+}
+
+td{
+ text-align: center;
+ border-bottom: 30px solid transparent;
+ border-top: 30px solid transparent;
+}
+
+td {
+    background-color: white;
+}
+
+
+#supprimer {
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(160, 15, 15);
+    color: white;
+    font-size: 20px;
+}
+
+
+#modifier {
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(32, 122, 205);
+    color:white;
+    font-size: 20px;
+}

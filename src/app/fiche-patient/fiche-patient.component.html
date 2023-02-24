@@ -1,1 +1,48 @@
-<p>fiche-patient works!</p>
+<div id="titre">
+    <h1>Patients</h1>
+</div>
+
+
+<main>
+    <div class="backgroundOpacity container">
+    <div id="ajoutButton">
+        <button>Ajouter un nouveau patient</button>
+    </div>
+
+    <div id="recherche">
+        <form action="">
+            <label>Rechercher par:</label>
+            <select name="type" id="type">
+                <option></option>
+                <option>Nom</option>
+                <option>Prénom</option>
+                <option>Mail</option>
+            </select>
+            <input type="text">
+            <button>recherche</button>
+        </form>
+    </div>
+    <div id="liste">
+        <table>
+            <tr>
+            <th>nom</th>
+            <th>prénom</th>
+            <th>mail</th>
+            <th>mot de passe</th>
+            </tr>
+            <tr>
+     <tr class="liste" *ngFor="let person of listePersonnel"> 
+        <td>{{ person.nom}}</td>
+        <td>{{ person.prenom }}</td>
+        <td>{{ person.mail }}</td>
+        <td>{{ person.mdp }}</td>
+        <td>{{person.id}}</td>
+        <td><a (click)="getId()"><button id="modifier">Modifier</button></a></td>
+       <td><button id="supprimer">Supprimer</button></td>
+     </tr>
+</table>
+</div>
+</div>
+</main> 
+  
+
