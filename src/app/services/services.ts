@@ -50,6 +50,16 @@ export const listePersonnel  =
         mail : "diallomamadou@gmail.com",
         mdp:"123"
         
+      },
+
+      {  
+       
+        id:3,
+        nom : "Masset",
+        prenom : "Marina",
+        mail : "massetmaria@gmail.com",
+        mdp:"123"
+        
       }
     ]
 

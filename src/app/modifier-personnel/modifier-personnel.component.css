@@ -1,0 +1,93 @@
+h2 {
+    text-align: center;
+}
+
+#logo {
+    width: 100px;
+    height:100px;
+    margin-right:20px;
+}
+
+
+
+.welcomeMessage {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#modifForm {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 40px;
+    width: 30vw;
+    height: 50vh;
+    box-shadow: 2px 2px 2px red;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#form {
+    margin-top: 5vh;
+}
+
+button {
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  height: 40px;
+  font-size: 20px;
+}
+
+
+label {
+    margin-bottom: 15px;
+    font-size: 20px;
+    display: flex;
+    justify-content:center;
+}
+
+input {
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  border-radius: 40px;
+  margin-bottom: 15px;
+}
+
+
+#form {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    background-image: url(../../assets/images/staffBackground.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100vw;
+    height: 100vh;
+} 
+
+.backgroundOpacity {
+    background-color:rgba(255,255,255, 0.8);    
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titre {
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}

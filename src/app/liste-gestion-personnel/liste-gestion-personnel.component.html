@@ -1,9 +1,3 @@
-<header>
-    <div class="welcomeMessage">
-        <img id="logo" src="../../assets/images/croix.png" alt="logo croix rouge">
-        <h1>Bonjour Nicolas Majorczyk</h1>
-    </div>
-</header>
 
 <div id="titre">
     <h1>Gestion du personnel</h1>
@@ -37,11 +31,18 @@
             <th>mail</th>
             <th>mot de passe</th>
             </tr>
-           
-    <div id="affichage" *ngFor="let person of listePersonnel">
-    <app-gestion-personnel [personnel] = "person" ></app-gestion-personnel></div>
+            <tr>
+     <tr class="liste" *ngFor="let person of listePersonnel"> 
+        <td>{{ person.nom}}</td>
+        <td>{{ person.prenom }}</td>
+        <td>{{ person.mail }}</td>
+        <td>{{ person.mdp }}</td>
+        <td>{{person.id}}</td>
+        <td><a (click)="getId()"><button id="modifier">Modifier</button></a></td>
+       <td><button id="supprimer">Supprimer</button></td>
+     </tr>
 </table>
 </div>
 </div>
-</main>
+</main> 
   
