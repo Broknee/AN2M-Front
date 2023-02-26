@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule  } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,13 +10,13 @@ import { AccueilInfirmiersComponent } from './accueil-infirmiers/accueil-infirmi
 import { LoginComponent } from './login/login.component';
 import { GestionLitsComponent } from './gestion-lits/gestion-lits.component';
 import { ListeGestionPersonnelComponent } from './liste-gestion-personnel/liste-gestion-personnel.component';
-import { FichePatientFormComponent } from './fiche-patient-form/fiche-patient-form.component';
 import { SuiviPatientFormComponent } from './suivi-patient-form/suivi-patient-form.component';
 import { SuiviPatientComponent } from './suivi-patient/suivi-patient.component';
-import { FichePatientComponent } from './fiche-patient/fiche-patient.component';
 import { ModifierPersonnelComponent } from './modifier-personnel/modifier-personnel.component';
 import { HeaderComponent } from './header/header.component';
-
+import { AjoutPersonnelComponent } from './ajout-personnel/ajout-personnel.component';
+import { ListePatientComponent } from './liste-patient/liste-patient.component';
+import { FichePatientComponent } from './fiche-patient/fiche-patient.component';
 
 @NgModule({
   declarations: [
@@ -27,21 +27,18 @@ import { HeaderComponent } from './header/header.component';
     AccueilInfirmiersComponent,
     LoginComponent,
     GestionLitsComponent,
-    FichePatientComponent,
     SuiviPatientComponent,
     ListeGestionPersonnelComponent,
-    FichePatientFormComponent,
     SuiviPatientFormComponent,
     SuiviPatientComponent,
     ModifierPersonnelComponent,
-    HeaderComponent
+    HeaderComponent,
+    AjoutPersonnelComponent,
+    ListePatientComponent,
+    FichePatientComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

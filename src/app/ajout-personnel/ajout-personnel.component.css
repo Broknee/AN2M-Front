@@ -1,22 +1,11 @@
-h2 {
+
+
+#titre {
+    background-color: rgb(244, 244, 244);
     text-align: center;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
 }
-
-#logo {
-    width: 100px;
-    height:100px;
-    margin-right:20px;
-}
-
-
-
-.welcomeMessage {
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 
 #modifForm {
     padding-top: 50px;

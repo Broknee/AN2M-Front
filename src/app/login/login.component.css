@@ -46,6 +46,7 @@ h2 {
     border-radius: 40px;
     width: 30vw;
     height: 50vh;
+    text-align: center;
     box-shadow: 2px 2px 2px red;
     z-index: 100;
     background-color: rgba(255, 255, 255, 0.5);
@@ -54,10 +55,10 @@ h2 {
 #b_connexion {
   background-color: red;
   color: white;
-  border-radius: 10px;
+  border-radius: 20px;
   height: 40px;
   font-size: 20px;
-
+  width: 200px;
 }
 
 
@@ -75,4 +76,5 @@ input {
   justify-content: center;
   border-radius: 40px;
   margin-bottom: 15px;
+  font-size: 20px;
 }

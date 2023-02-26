@@ -1,0 +1,29 @@
+<app-header></app-header>
+<header>
+
+    <div id="titre">
+        <h1>Création salarié</h1>
+    </div>
+
+    <main>
+        <div class="backgroundOpacity container">
+     
+    
+    <div id="form">
+        <form [formGroup]="ajoutPersoForm" id="modifForm" (ngSubmit)="onSubmit()" >
+        <label>nom</label>
+        <input type="text" formControlName="nom" placeholder="" required/>
+        <label>prénom</label>
+        <input type="text" formControlName="prenom" required/>
+        <label>mail</label>
+        <input type="text" formControlName="mail" required/>
+        <label>mot de passe</label>
+        <input type="text" formControlName="mdp" required/>
+        <button id="b_connexion" >Valider</button>
+      </form>
+    </div>
+    </div>
+    </main>
+</header>
+
+

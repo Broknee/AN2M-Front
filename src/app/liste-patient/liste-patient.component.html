@@ -1,15 +1,11 @@
 <app-header></app-header>
 <div id="titre">
-    <h1>Gestion du personnel</h1>
+    <h1>Gestion des patients</h1>
 </div>
 
 
 <main>
     <div class="backgroundOpacity container">
-    <div id="ajoutButton">
-      
-        <a routerLink="/ajout_personnel"><button>Ajouter un nouveau salarié</button></a>
-    </div>
 
     <div id="recherche">
         <form action="">
@@ -29,17 +25,21 @@
             <tr>
             <th>nom</th>
             <th>prénom</th>
-            <th>mail</th>
-            <th>mot de passe</th>
+            <th>n° lit</th>
+            <th>n° chambre</th>
+            <th>date d'arrivée</th>
+            <th>date de fin de séjour</th>
             </tr>
             <tr>
-     <tr class="liste" *ngFor="let person of listePersonnel"> 
-        <td>{{ person.nom}}</td>
-        <td>{{ person.prenom }}</td>
-        <td>{{ person.mail }}</td>
-        <td>{{ person.mdp }}</td>
-        <td><a routerLink="/modifier_personnel/{{person.id}}"><button id="modifier">Modifier</button></a></td>
-       <td><button id="supprimer">Supprimer</button></td>
+     <tr class="liste" *ngFor="let patient of listePatient"> 
+        <td>{{ patient.nom}}</td>
+        <td>{{ patient.prenom }}</td>
+        <td>{{ patient.lit }}</td>
+        <td>{{ patient.chambre }}</td>
+        <td>{{ patient.arrivee }}</td>
+        <td>{{ patient.depart }}</td>
+        <td><a routerLink="/fiche_patient/{{patient.id}}"><button id="fiche">fiche</button></a></td>
+       <td><button id="suivi">Suivi</button></td>
      </tr>
 </table>
 </div>

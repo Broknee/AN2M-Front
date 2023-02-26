@@ -1,0 +1,111 @@
+.backgroundOpacity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(255,255,255, 0.8);    
+    width:100vw;
+    height: 100vh;
+}
+
+main {
+    background-image: url(../../assets/images/staffBackground.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100vw;
+    height: 100vh;
+} 
+
+#suiviPatient {
+    visibility: hidden;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    width: 300px;
+    height: 500px;
+}
+
+
+#infosPrincipales {
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+
+#form1 {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items:last baseline;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+#form2 {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+}
+
+input {
+    margin-bottom: 50px;
+    width: 200px;
+}
+
+#contactsUrgence {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    width: 300px;
+    height: 500px;
+}
+
+#plusSuivi  {
+    background-color: white;
+    width: 70px;
+    height: 300px;
+    margin-left: 40px;
+    border-radius:  10px 0 0 10px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#plusSuivi img {
+    width: 40px;
+}
+
+#plusContact {
+    background-color: white;
+    width: 70px;
+    height: 300px;
+    margin-right: 40px;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#plusContact img {
+    width: 40px;
+    height: 40px;
+}

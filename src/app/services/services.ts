@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { patientModel } from "../models/patient.model";
 import { personnelModel } from "../models/personnel.model";
 
 
@@ -26,6 +27,27 @@ export class Services {
         }
           return personnelId;
     }
+
+
+
+    getlistePatient() : patientModel[] {
+      return listePatient;
+}
+
+getlistePatientbyId(id:Number) :patientModel {
+  let patientId!:patientModel
+
+  for(let i=0;i<listePatient.length;i++){
+    if(listePatient[i].id == id) {
+      patientId = listePatient[i];
+    }
+    
+  }
+    return patientId;
+}
+
+
+
 }
 
 
@@ -62,6 +84,52 @@ export const listePersonnel  =
         
       }
     ]
+
+
+
+    export const listePatient  =
+[
+    {  
+       
+        id:1,
+        nom : "Doe",
+        prenom : "John",
+        lit:1,
+        chambre:123,
+        arrivee:"2023.02.01",
+        depart:"2023.02.10",
+        
+      },
+
+      {  
+       
+        id:1,
+        nom : "Doe",
+        prenom : "John",
+        lit:1,
+        chambre:123,
+        arrivee:"2023.02.01",
+        depart:"2023.02.10",
+        
+      },
+
+      {  
+       
+        id:1,
+        nom : "Doe",
+        prenom : "John",
+        lit:1,
+        chambre:123,
+        arrivee:"2023.02.01",
+        depart:"2023.02.10",
+        
+      }
+      
+    
+    ]
+
+
+  
 
 
   
