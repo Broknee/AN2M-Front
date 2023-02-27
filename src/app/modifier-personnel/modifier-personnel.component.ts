@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { personnelModel } from '../models/personnel.model';
+import { UserDtoPost, UserGet} from '../models/personnel.model';
 import { Services } from '../services/services';
 
 @Component({
@@ -13,7 +13,9 @@ export class ModifierPersonnelComponent implements OnInit {
 
   modifPersoForm : FormGroup;
 
-  modifPerso!: personnelModel
+  @ Input() modifPerso!: UserGet
+
+  
 
   @Input() id!:Number  // on crée la variable ID 
   constructor( private fb: FormBuilder,private service:Services, private route: ActivatedRoute ){ 
@@ -30,16 +32,33 @@ export class ModifierPersonnelComponent implements OnInit {
     } 
   }
   ngOnInit():void {
-    this.id=this.route.snapshot.params["id"] 
+    
+
+  //   this.route.queryParams
+  //   .filter(params => params.order)
+  //   .subscribe(params => {
+  //     console.log(params); // { order: "popular" }
+
+  //     this.modifPerso= params.modifPerso;
+
+  //     console.log(this.modifPerso); // popular
+  //   }
+  // );
+
+    // this.route.queryParamMap.subscribe((params:any)=> console.log(params));
+   this.id=this.route.snapshot.params["id"]
+   console.log(this.id)
+this.modifPerso=this.service.getlistePersonnelbyId(this.id)
+
+    // this.modifPerso = this.service.getlistePersonnelbyId(this.id);
    // récupération de l'ID grâce à la propriété Snapshot 
    // la valeur est placée dans id, qui est déclarée plus haut 
-   this.modifPerso = this.service.getlistePersonnelbyId(this.id)
-}
+  }
 
 onSubmit() {
    
 }
-  }
+}
 
 
 

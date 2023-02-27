@@ -30,15 +30,15 @@
             <th>nom</th>
             <th>prénom</th>
             <th>mail</th>
-            <th>mot de passe</th>
+            <th>métier</th>
             </tr>
             <tr>
-     <tr class="liste" *ngFor="let person of listePersonnel"> 
-        <td>{{ person.nom}}</td>
-        <td>{{ person.prenom }}</td>
-        <td>{{ person.mail }}</td>
-        <td>{{ person.mdp }}</td>
-        <td><a routerLink="/modifier_personnel/{{person.id}}"><button id="modifier">Modifier</button></a></td>
+     <tr class="liste" *ngFor="let person of users"> 
+        <td>{{ person.firstName}}</td>
+        <td>{{ person.lastName }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.roles[0]}}</td>
+        <td><a (click)="modifier(person.id)"><button id="modifier">Modifier</button></a></td>
        <td><button id="supprimer">Supprimer</button></td>
      </tr>
 </table>

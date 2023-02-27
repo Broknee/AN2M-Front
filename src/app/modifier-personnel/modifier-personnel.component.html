@@ -10,18 +10,16 @@
 
     <main>
         <div class="backgroundOpacity container">
-     
+       
     
     <div id="form">
         <form [formGroup]="modifPersoForm" id="modifForm" (ngSubmit)="onSubmit()" >
         <label>nom</label>
-        <input type="text" formControlName="nom" placeholder="{{modifPerso.nom}}" required/>
+        <input type="text" formControlName="nom" placeholder="{{modifPerso.lastName}}" required/>
         <label>prénom</label>
-        <input type="text" formControlName="prenom" placeholder="{{modifPerso.prenom}}" required/>
+        <input type="text" formControlName="prenom" placeholder="{{modifPerso.firstName}}" required/>
         <label>mail</label>
-        <input type="text" formControlName="mail" placeholder="{{modifPerso.mail}}" required/>
-        <label>mot de passe</label>
-        <input type="text" formControlName="mdp" placeholder="{{modifPerso.mdp}}" required/>
+        <input type="text" formControlName="mail" placeholder="{{modifPerso.email}}" required/>
         <button id="b_connexion" >Valider les modifications</button>
       </form>
     </div>

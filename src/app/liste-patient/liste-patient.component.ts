@@ -21,7 +21,7 @@ export class ListePatientComponent {
   constructor(private service : Services, private route : Router) {}
 
   ngOnInit(): void { 
-    this.listePatient = this.service.getlistePatient();  
+    // this.listePatient = this.service.getlistePatient();  
      
   }
 

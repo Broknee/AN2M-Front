@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component';
@@ -23,11 +24,12 @@ const routes: Routes = [
   { path: 'ajout_personnel', component: AjoutPersonnelComponent },
   { path: 'gestion_patient', component: ListePatientComponent },
   { path: 'fiche_patient/:id', component: FichePatientComponent},
-  { path: 'suivi_patient/:id', component: SuiviPatientComponent}
+  { path: 'suivi_patient/:id', component: SuiviPatientComponent},
+  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),HttpClientModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
