@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { patientModel } from '../models/patient.model';
+import { Services } from '../services/services';
 
 @Component({
   selector: 'app-fiche-patient',
@@ -7,4 +10,13 @@ import { Component } from '@angular/core';
 })
 export class FichePatientComponent {
 
+  @Input() listePatient!: patientModel[];
+  @Input() patient!: patientModel
+
+  constructor(private service : Services, private route : Router) {}
+
+  ngOnInit(): void { 
+    this.listePatient = this.service.getlistePatient();  
+     
+  }
 }
