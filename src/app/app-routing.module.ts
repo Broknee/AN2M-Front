@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'modifier_personnel/:id', component: ModifierPersonnelComponent },
   { path: 'ajout_personnel', component: AjoutPersonnelComponent },
   { path: 'gestion_patient', component: ListePatientComponent },
-  { path: 'fiche_patient', component: FichePatientComponent}
+  { path: 'fiche_patient/:id', component: FichePatientComponent}
 ];
 
 @NgModule({
