@@ -21,9 +21,10 @@ export class AjoutPersonnelComponent {
       this.ajoutPersoForm = this.fb.group({
         nom: [''],
         prenom:[''],
+        username:[''],
         mail: [''],
         mdp: [''],
-  
+        role:['']
       });
     } 
   }

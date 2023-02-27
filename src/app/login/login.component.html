@@ -7,9 +7,9 @@
   
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="connexion" >
       <h2>Connexion</h2>
-      <label>mail</label>
-      <input type="text" formControlName="mail" required/>
-      <label>mot de passe</label>
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" formControlName="username" required/>
+      <label for="mdp">mot de passe</label>
       <input type="text" formControlName="mdp" required/>
       <button id="b_connexion" >Valider</button>
     </form>

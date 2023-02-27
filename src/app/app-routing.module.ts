@@ -9,6 +9,8 @@ import { ListeGestionPersonnelComponent } from './liste-gestion-personnel/liste-
 import { ListePatientComponent } from './liste-patient/liste-patient.component';
 import { LoginComponent } from './login/login.component';
 import { ModifierPersonnelComponent } from './modifier-personnel/modifier-personnel.component';
+import { SuiviPatientComponent } from './suivi-patient/suivi-patient.component';
+
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -20,7 +22,8 @@ const routes: Routes = [
   { path: 'modifier_personnel/:id', component: ModifierPersonnelComponent },
   { path: 'ajout_personnel', component: AjoutPersonnelComponent },
   { path: 'gestion_patient', component: ListePatientComponent },
-  { path: 'fiche_patient', component: FichePatientComponent}
+  { path: 'fiche_patient/:id', component: FichePatientComponent},
+  { path: 'suivi_patient/:id', component: SuiviPatientComponent}
 ];
 
 @NgModule({
