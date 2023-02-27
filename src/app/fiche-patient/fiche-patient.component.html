@@ -1,11 +1,13 @@
 <app-header></app-header>
+
 <main>
 
   
 
 
+
     <div class="backgroundOpacity container">
-        <div id="suiviPatient">
+        <div id="suiviPatient" [ngClass]="{'hidden':hidden}">
             <h2>Suivi Patient</h2>
             <p>Commentaires récents</p>
             <p>Piqûre ce matin</p>
@@ -14,9 +16,10 @@
         </div>
         
 
-        <div id="plusSuivi">
+        <div  id="plusSuivi">
             <p>Suivi</p>
-            <img src="../../assets/images/plus.png"  onclick="showSuivi()">
+            <img src="../../assets/images/plus.png" (click)="Suivivisible()" *ngIf="Visibility"> 
+            <img src="../../assets/images/minus.png" (click)="Suivivisible()" *ngIf="!Visibility">
         </div>
        
         <div id="infosPrincipales">
@@ -42,11 +45,12 @@
     </div>
         <div id="plusContact" >
             <p>Contact Urgence</p>
-            <img  src="../../assets/images/plus.png" onclick="showContact()" >
+            <img  src="../../assets/images/plus.png" (click)="Contactvisible()"  *ngIf="visiblity">
+            <img src="../../assets/images/minus.png" (click)="Contactvisible()" *ngIf="!visiblity">
             
         </div>
 
-        <div id="contactsUrgence">
+        <div id="contactsUrgence" [ngClass]="{'Hidden':Hidden}">
             <h2>Contact urgence</h2>
             <label>Nom</label>
             <input type="text" value="Dubois">
@@ -61,6 +65,3 @@
 </div>
 
 </main>
-  
-
-        

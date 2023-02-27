@@ -16,12 +16,20 @@ main {
 } 
 
 #suiviPatient {
-    visibility: hidden;
     text-align: center;
     background-color: white;
     border-radius: 20px;
     width: 300px;
     height: 500px;
+}
+
+
+.hidden {
+    visibility: hidden;
+}
+
+.Hidden{
+    visibility: hidden;
 }
 
 
@@ -65,7 +73,6 @@ input {
 }
 
 #contactsUrgence {
-    visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
