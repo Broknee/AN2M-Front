@@ -2,17 +2,14 @@
 
 <main>
 
-  
-
-
-
     <div class="backgroundOpacity container">
         <div id="suiviPatient" [ngClass]="{'hidden':hidden}">
             <h2>Suivi Patient</h2>
-            <p>Commentaires récents</p>
-            <p>Piqûre ce matin</p>
-            <p>Toilette du patient à 8h45</p>
-            <p>Piqûre à 14h</p>
+            <h3>Commentaires récents :</h3> 
+            <div *ngFor="let suivi of commentsListById.slice(commentsListById.length -3)">
+                <p>{{suivi.comment}}</p>
+            </div>
+        <a id="suiviButton" routerLink="/suivi_patient/{{patient.id}}">Consulter le suivi</a>
         </div>
         
 
@@ -23,23 +20,24 @@
         </div>
        
         <div id="infosPrincipales">
-            <h1>Nom du patient</h1>
+            <h1>{{patient.prenom}} {{patient.nom}}</h1>
+            <br>
             <div id="form">
             <div id="form1">
-            <label>N° sécurité sociale</label>
-            <input type="text" value="1029911092">
-            <label>Adresse</label>
-            <input type="text" value="15rue des Lilas">
-            <label>n°téléphone</label>
-            <input type="text" value="0677777777">
+            <h3>N° sécurité sociale :</h3>
+            <p>{{patient.secu}}</p>
+            <h3>Adresse :</h3>
+            <p>{{patient.adresse}}</p>
+            <h3>n°téléphone</h3>
+            <p>{{patient.tel}}</p>
             </div>
             <div id="form2">
-            <label>Raison du séjour</label>
-            <input type="text" value="ligaments croisés du genou gauche">
-            <label>date d'arrivée</label>
-            <input type="text" value="10/04/2023">
-            <label>date de départ</label>
-            <input type="text" value="14/04/2023">
+            <h3>Raison du séjour :</h3>
+            <p>{{patient.raison}}</p>
+            <h3>date d'arrivée :</h3>
+            <p>{{patient.arrivee}}</p>
+            <h3>date de départ :</h3>
+            <p>{{patient.depart}}</p>
         </div>
             </div>
     </div>
@@ -51,16 +49,13 @@
         </div>
 
         <div id="contactsUrgence" [ngClass]="{'Hidden':Hidden}">
-            <h2>Contact urgence</h2>
-            <label>Nom</label>
-            <input type="text" value="Dubois">
-            <label>Prénom</label>
-            <input type="text" value="Laura">
-            <label>Téléphone</label>
-            <input type="text" value="0677777777">
-            <label>Adresse</label>
-            <input type="text" value="54 rue des tulipes 59000 Lille">
-
+            <h2>Contact d'urgence</h2>
+            <h3>Nom :</h3>
+            <p>{{patient.nom_urgence}}</p>
+            <h3>Prénom :</h3>
+            <p>{{patient.prenom_urgence}}</p>
+            <h3>Téléphone :</h3>
+            <p>{{patient.tel_urgence}}</p>
         </div>
 </div>
 

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { patientModel } from '../models/patient.model';
+import { personnelModel } from '../models/personnel.model';
 import { Services } from '../services/services';
 
 @Component({

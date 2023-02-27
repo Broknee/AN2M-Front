@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import {UserGet, UserDtoPost } from "../models/personnel.model";
+import { SuiviModel } from "../models/suivi.model";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -153,6 +154,51 @@ getUsers(): Observable<UserGet[]>{
       
     
 //     ]
+
+//     export const commentsList : SuiviModel[] =
+// [
+//     {  
+       
+//         id:1,
+//         comment : "Piqûre à 8h",
+//         user_id : 1,
+//         patient_id : 1
+//       },
+
+//       {  
+       
+//         id:2,
+//         comment : "Piqûre à 9h",
+//         user_id : 4,
+//         patient_id : 2
+//       },
+
+//       {  
+       
+//         id:3,
+//         comment : "Piqûre à 10h",
+//         user_id : 4,
+//         patient_id : 2
+//       },
+
+//       {  
+       
+//         id:4,
+//         comment : "Piqûre à 11h",
+//         user_id : 1,
+//         patient_id : 2
+//       },
+
+//       {  
+       
+//         id:4,
+//         comment : "Piqûre à 12h",
+//         user_id : 4,
+//         patient_id : 2
+//       },
+      
+    
+//    ]
 
 
   
