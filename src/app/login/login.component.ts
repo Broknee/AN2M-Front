@@ -17,7 +17,7 @@ export class LoginComponent {
   constructor(private fb: FormBuilder, private route:  Router) { 
 
     this.contactForm = this.fb.group({
-      mail: [''],
+      username: [''],
       mdp: [''],
     });
   }

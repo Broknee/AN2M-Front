@@ -3,5 +3,7 @@ export class personnelModel {
     nom!:String
     prenom!:String
     mail!:String
+    username!:String
     mdp!:String
+    role!:String
 }

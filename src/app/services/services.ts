@@ -59,7 +59,9 @@ export const listePersonnel  =
         nom : "Doe",
         prenom : "John",
         mail : "doejohn@gmail.com",
-        mdp:"123"
+        username: "JohnDoe",
+        mdp:"123",
+        role:"infirmier"
        
         
       },
@@ -70,7 +72,9 @@ export const listePersonnel  =
         nom : "Diallo",
         prenom : "Mamadou",
         mail : "diallomamadou@gmail.com",
-        mdp:"123"
+        username: "Mamadou",
+        mdp:"123",
+        role:"admin"
         
       },
 
@@ -80,7 +84,9 @@ export const listePersonnel  =
         nom : "Masset",
         prenom : "Marina",
         mail : "massetmaria@gmail.com",
-        mdp:"123"
+        username:"Marina",
+        mdp:"123",
+        role:"secrétaire"
         
       }
     ]
@@ -104,8 +110,8 @@ export const listePersonnel  =
       {  
        
         id:2,
-        nom : "Doe",
-        prenom : "John",
+        nom : "Masset",
+        prenom : "Marina",
         lit:1,
         chambre:123,
         arrivee:"2023.02.01",

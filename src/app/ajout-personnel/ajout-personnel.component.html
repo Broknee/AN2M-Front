@@ -11,14 +11,23 @@
     
     <div id="form">
         <form [formGroup]="ajoutPersoForm" id="modifForm" (ngSubmit)="onSubmit()" >
-        <label>nom</label>
+        <label for="nom">nom</label>
         <input type="text" formControlName="nom" placeholder="" required/>
-        <label>prénom</label>
+        <label for="prenom">prénom</label>
         <input type="text" formControlName="prenom" required/>
-        <label>mail</label>
+        <label for="username">nom d'utilisateur</label>
+        <input type="text" formControlName="username" required/>
+        <label for="mail">mail</label>
         <input type="text" formControlName="mail" required/>
-        <label>mot de passe</label>
+        <label for="mdp">mot de passe</label>
         <input type="text" formControlName="mdp" required/>
+        <label for="role">rôle</label>
+        <select name="role" id="role">
+            <option value="">Veuillez choisir un rôle :</option>
+            <option value="infirmier">Infirmier</option>
+            <option value="admin">Administrateur</option>
+            <option value="secretaire">Secrétaire</option>
+        </select>
         <button id="b_connexion" >Valider</button>
       </form>
     </div>
