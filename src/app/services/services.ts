@@ -58,8 +58,8 @@ private getUrl = "http://localhost:8080/api/users";
 private baseUrlmodify= "http://localhost:8080/api/modifyUserInfo";
 
 constructor(private http: HttpClient) { }
-postUser(user:UserGet):Observable<UserGet> {
-return this.http.post<UserGet>(this.baseUrl,user);
+postUser(user:UserDtoPost):Observable<UserDtoPost> {
+return this.http.post<UserDtoPost>(this.baseUrlpost,user);
 }
 modifyUser(user:UserGet):Observable<UserGet>{
   return this.http.post<UserGet>(this.baseUrlmodify,user);
