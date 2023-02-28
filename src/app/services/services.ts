@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
-import {UserGet, UserDtoPost } from "../models/personnel.model";
-import { SuiviModel } from "../models/suivi.model";
+import {UserGet} from "../models/personnel.model";
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -54,9 +53,9 @@ export class Services {
 // }
 
 
-private baseUrl = "http://localhost:8090/api/";
-private getUrl = "http://localhost:8090/api/users";
-private baseUrlmodify= "http://localhost:8090/api/modifyUserInfo";
+private baseUrl = "http://localhost:8080/api/save";
+private getUrl = "http://localhost:8080/api/users";
+private baseUrlmodify= "http://localhost:8080/api/modifyUserInfo";
 
 constructor(private http: HttpClient) { }
 postUser(user:UserGet):Observable<UserGet> {
@@ -74,147 +73,7 @@ getUsers(): Observable<UserGet[]>{
   
 }
 
-
-
-
-
-
-
-
-
 }
-
-
-// export const listePersonnel  =
-// [
-//     {  
-       
-//         id:1,
-//         nom : "Doe",
-//         prenom : "John",
-//         mail : "doejohn@gmail.com",
-//         username: "JohnDoe",
-//         mdp:"123",
-//         role:"infirmier"
-       
-        
-//       },
-      
-//       {  
-       
-//         id:2,
-//         nom : "Diallo",
-//         prenom : "Mamadou",
-//         mail : "diallomamadou@gmail.com",
-//         username: "Mamadou",
-//         mdp:"123",
-//         role:"admin"
-        
-//       },
-
-//       {  
-       
-//         id:3,
-//         nom : "Masset",
-//         prenom : "Marina",
-//         mail : "massetmaria@gmail.com",
-//         username:"Marina",
-//         mdp:"123",
-//         role:"secrétaire"
-        
-//       }
-//     ]
-
-
-
-//     export const listePatient  =
-// [
-//     {  
-       
-//         id:1,
-//         nom : "Doe",
-//         prenom : "John",
-//         lit:1,
-//         chambre:123,
-//         arrivee:"2023.02.01",
-//         depart:"2023.02.10",
-        
-//       },
-
-//       {  
-       
-//         id:2,
-//         nom : "Masset",
-//         prenom : "Marina",
-//         lit:1,
-//         chambre:123,
-//         arrivee:"2023.02.01",
-//         depart:"2023.02.10",
-        
-//       },
-
-//       {  
-       
-//         id:3,
-//         nom : "Doe",
-//         prenom : "John",
-//         lit:1,
-//         chambre:123,
-//         arrivee:"2023.02.01",
-//         depart:"2023.02.10",
-        
-//       }
-      
-    
-//     ]
-
-//     export const commentsList : SuiviModel[] =
-// [
-//     {  
-       
-//         id:1,
-//         comment : "Piqûre à 8h",
-//         user_id : 1,
-//         patient_id : 1
-//       },
-
-//       {  
-       
-//         id:2,
-//         comment : "Piqûre à 9h",
-//         user_id : 4,
-//         patient_id : 2
-//       },
-
-//       {  
-       
-//         id:3,
-//         comment : "Piqûre à 10h",
-//         user_id : 4,
-//         patient_id : 2
-//       },
-
-//       {  
-       
-//         id:4,
-//         comment : "Piqûre à 11h",
-//         user_id : 1,
-//         patient_id : 2
-//       },
-
-//       {  
-       
-//         id:4,
-//         comment : "Piqûre à 12h",
-//         user_id : 4,
-//         patient_id : 2
-//       },
-      
-    
-//    ]
-
-
-  
 
 
   

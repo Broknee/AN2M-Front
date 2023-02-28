@@ -15,7 +15,7 @@ export class ModifierPersonnelComponent implements OnInit {
 
    @ Input() modifPerso!: UserGet
 
-   @Input() selectedUser$ !:UserGet
+   @Input() selectedUser$ !:UserDtoPost
 
   @Input() id!:Number  // on crée la variable ID 
   constructor( private fb: FormBuilder,private service:Services, private route: ActivatedRoute ){ 
@@ -26,7 +26,6 @@ export class ModifierPersonnelComponent implements OnInit {
         nom: [''],
         prenom:[''],
         mail: [''],
-        mdp: [''],
   
       });
     } 
@@ -41,9 +40,7 @@ this.service.selectedUser$.subscribe((value) => {
 });
 
 
-    // this.modifPerso = this.service.getlistePersonnelbyId(this.id);
-   // récupération de l'ID grâce à la propriété Snapshot 
-   // la valeur est placée dans id, qui est déclarée plus haut 
+
   }
 
 onSubmit() {

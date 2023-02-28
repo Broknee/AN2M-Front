@@ -14,6 +14,7 @@ export class UserGet {
     firstName!: string;
     lastName!: string;
     email!: string;
+    password!:string
     roles!:string[] 
 }
 
@@ -22,6 +23,7 @@ export class UserDtoPost {
     firstName!: string;
     lastName!: string;
     email!: string;
+    roles!:string[] 
     password!:string
     assignation!:string[]
   
