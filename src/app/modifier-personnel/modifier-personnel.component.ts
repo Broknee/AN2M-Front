@@ -57,10 +57,15 @@ onSubmit() {
  console.log(this.selectedUser$)
   
 
-  this.service.modifyUser(this.selectedUser$).subscribe(data=>console.log(data),
-  err=>console.log(err)
-  );
+  this.service.modifyUser(this.selectedUser$).subscribe({
+    next: (data)=>console.log(data),
+  error: err=>console.log(err)
+});
    
+
+
+
+
 }
 }
 
