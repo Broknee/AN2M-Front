@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import {UserGet} from "../models/personnel.model";
+import {UserDtoPost, UserGet} from "../models/personnel.model";
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -53,7 +53,7 @@ export class Services {
 // }
 
 
-private baseUrl = "http://localhost:8080/api/save";
+private baseUrlpost = "http://localhost:8080/api/save";
 private getUrl = "http://localhost:8080/api/users";
 private baseUrlmodify= "http://localhost:8080/api/modifyUserInfo";
 
