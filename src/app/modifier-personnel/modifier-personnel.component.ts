@@ -13,9 +13,9 @@ export class ModifierPersonnelComponent implements OnInit {
 
   modifPersoForm : FormGroup;
 
-  @ Input() modifPerso!: UserGet
+   @ Input() modifPerso!: UserGet
 
-  
+   @Input() selectedUser$ !:UserGet
 
   @Input() id!:Number  // on crée la variable ID 
   constructor( private fb: FormBuilder,private service:Services, private route: ActivatedRoute ){ 
@@ -34,21 +34,12 @@ export class ModifierPersonnelComponent implements OnInit {
   ngOnInit():void {
     
 
-  //   this.route.queryParams
-  //   .filter(params => params.order)
-  //   .subscribe(params => {
-  //     console.log(params); // { order: "popular" }
 
-  //     this.modifPerso= params.modifPerso;
 
-  //     console.log(this.modifPerso); // popular
-  //   }
-  // );
+this.service.selectedUser$.subscribe((value) => {
+  this.selectedUser$ = value;
+});
 
-    // this.route.queryParamMap.subscribe((params:any)=> console.log(params));
-   this.id=this.route.snapshot.params["id"]
-   console.log(this.id)
-this.modifPerso=this.service.getlistePersonnelbyId(this.id)
 
     // this.modifPerso = this.service.getlistePersonnelbyId(this.id);
    // récupération de l'ID grâce à la propriété Snapshot 
@@ -56,6 +47,19 @@ this.modifPerso=this.service.getlistePersonnelbyId(this.id)
   }
 
 onSubmit() {
+
+  if(this.modifPersoForm.value.nom)
+ { this.selectedUser$.lastName = this.modifPersoForm.value.nom}
+ if(this.modifPersoForm.value.prenom)
+ { this.selectedUser$.firstName = this.modifPersoForm.value.prenom}
+ if(this.modifPersoForm.value.mail)
+ { this.selectedUser$.email = this.modifPersoForm.value.mail}
+ console.log(this.selectedUser$)
+  
+
+  this.service.modifyUser(this.selectedUser$).subscribe(data=>console.log(data),
+  err=>console.log(err)
+  );
    
 }
 }

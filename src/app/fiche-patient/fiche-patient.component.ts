@@ -19,8 +19,8 @@ export class FichePatientComponent {
 
   ngOnInit(): void { 
     this.id=this.route.snapshot.params["id"] 
-    this.patient = this.service.getlistePatientbyId(this.id);  
-    this.commentsListById = this.service.getCommentsListById(this.id);
+    //this.patient = this.service.getlistePatientbyId(this.id);  
+    //this.commentsListById = this.service.getCommentsListById(this.id);
     console.log(this.commentsListById);
      
   }

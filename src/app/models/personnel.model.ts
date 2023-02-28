@@ -1,5 +1,5 @@
 export class personnelModel {
-    id!:Number
+    id!:number
     nom!:String
     prenom!:String
     mail!:String
@@ -23,6 +23,6 @@ export class UserDtoPost {
     lastName!: string;
     email!: string;
     password!:string
-    assignation!:string
+    assignation!:string[]
   
 }

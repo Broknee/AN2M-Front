@@ -18,6 +18,6 @@ export class SuiviPatientComponent {
   
   ngOnInit(): void { 
     this.id=this.route.snapshot.params["id"];
-    this.commentsListById = this.service.getCommentsListById(this.id);
+    //this.commentsListById = this.service.getCommentsListById(this.id);
   }
 }

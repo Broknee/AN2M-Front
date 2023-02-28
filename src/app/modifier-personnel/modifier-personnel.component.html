@@ -15,11 +15,11 @@
     <div id="form">
         <form [formGroup]="modifPersoForm" id="modifForm" (ngSubmit)="onSubmit()" >
         <label>nom</label>
-        <input type="text" formControlName="nom" placeholder="{{modifPerso.lastName}}" required/>
+        <input type="text" formControlName="nom" placeholder="{{selectedUser$.lastName}}" required/>
         <label>prénom</label>
-        <input type="text" formControlName="prenom" placeholder="{{modifPerso.firstName}}" required/>
+        <input type="text" formControlName="prenom" placeholder="{{selectedUser$.firstName}}" required/>
         <label>mail</label>
-        <input type="text" formControlName="mail" placeholder="{{modifPerso.email}}" required/>
+        <input type="text" formControlName="mail" placeholder="{{selectedUser$.email}}" required/>
         <button id="b_connexion" >Valider les modifications</button>
       </form>
     </div>

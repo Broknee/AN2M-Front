@@ -22,16 +22,15 @@ userpost =new UserDtoPost()
   constructor(private service : Services, private route :Router) {}
 
   ngOnInit(): void { 
+
+
+   
+     
   
-  // this.listePersonnel = this.service.getlistePersonnel();  
 
-this.userpost.assignation="ROLE_INFIRMIER";
-this.userpost.email="AMAL2233@gmail.com";
-this.userpost.firstName="amal";
-this.userpost.lastName="amal";
-this.userpost.password="123";
 
-console.log(this.userpost)
+
+
 
 
 // this.service.postUser(this.userpost).subscribe(data=>console.log(data),error=>console.log(error));
@@ -48,9 +47,10 @@ console.log(data)});
 //     return listePersonnel;
 // }
 
-modifier(id:number) {
+modifier(person:any) {
   this.service.post=this.users;
-  this.route.navigateByUrl('modifier_personnel/'+id)
+  this.service.setUser(person)
+  this.route.navigateByUrl('modifier_personnel/'+person.id)
     
   
   
