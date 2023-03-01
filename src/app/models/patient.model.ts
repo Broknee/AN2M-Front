@@ -8,6 +8,8 @@ export class patientModel {
     chambre!:Number
     arrivee!:String
     depart!:String
+    // arrivee!:Date
+    // depart!:Date
     secu!:String
     tel!:String
     nom_urgence!:String

@@ -1,5 +1,5 @@
 <app-header></app-header>
-<!-- <div class="headerTitle">
+<div class="headerTitle">
     <h2>Gestion des lits </h2>
 </div>
 <div class="filters">
@@ -7,7 +7,7 @@
         <p>filtre dates</p>
         <img src="./assets/images/calendar.png" alt="calendrier">
     </div>
-    <p>{{curDate | date:'dd/MM/yyyy'}}</p>
+    <!-- <p>{{curDate | date:'dd/MM/yyyy'}}</p> -->
     <div>
         <img src="./assets/images/filter.png" alt="filtre affichage">
         <p>affichage</p>
@@ -31,8 +31,8 @@
                                     <div *ngIf="bed.patient_id === patient.id">
                                         <p>Lit n°{{bed.id}}</p>
                                         <h3>{{patient.nom}} {{patient.prenom}}</h3>
-                                        <p>Date d'entrée <br> {{patient.arrivee}}
-                                        <!-- {{ patient.arrivee | date: 'full'}}  -->
+                                        <p>Date d'entrée <br> {{patient.arrivee}} -->
+                                            <!-- {{ patient.arrivee | date: 'full'}}  -->
                                         </p>
                                         <p>Sortie prévue le <br> {{patient.depart}}</p>
                                     </div>
@@ -47,6 +47,6 @@
                 <div class="bed"></div> -->
             </div>
         </div>
-    </div>
+    </div> 
 
-</main> -->
+</main>

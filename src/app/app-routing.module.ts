@@ -6,12 +6,12 @@ import { AccueilInfirmiersComponent } from './accueil-infirmiers/accueil-infirmi
 import { AccueilSecretaireComponent } from './accueil-secretaire/accueil-secretaire.component';
 import { FichePatientComponent } from './fiche-patient/fiche-patient.component';
 import { AjoutPersonnelComponent } from './ajout-personnel/ajout-personnel.component';
-import { FichePatientComponent } from './fiche-patient/fiche-patient.component';
 import { ListeGestionPersonnelComponent } from './liste-gestion-personnel/liste-gestion-personnel.component';
 import { ListePatientComponent } from './liste-patient/liste-patient.component';
 import { LoginComponent } from './login/login.component';
 import { ModifierPersonnelComponent } from './modifier-personnel/modifier-personnel.component';
 import { SuiviPatientComponent } from './suivi-patient/suivi-patient.component';
+import { GestionLitsComponent } from './gestion-lits/gestion-lits.component';
 
 
 const routes: Routes = [
@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'gestion_patient', component: ListePatientComponent },
   { path: 'fiche_patient/:id', component: FichePatientComponent},
   { path: 'suivi_patient/:id', component: SuiviPatientComponent},
-  
+  { path: 'gestion_lits', component: GestionLitsComponent}
 ];
 
 @NgModule({
