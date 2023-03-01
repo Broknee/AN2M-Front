@@ -30,8 +30,6 @@
             <tr>
             <th>nom</th>
             <th>prénom</th>
-            <th>n° lit</th>
-            <th>n° chambre</th>
             <th>date d'arrivée</th>
             <th>date de fin de séjour</th>
             </tr>
@@ -39,11 +37,9 @@
      <tr class="liste" *ngFor="let patient of listePatient"> 
         <td>{{ patient.nom}}</td>
         <td>{{ patient.prenom }}</td>
-        <td>{{ patient.lit }}</td>
-        <td>{{ patient.chambre }}</td>
-        <td>{{ patient.arrivee }}</td>
-        <td>{{ patient.depart }}</td>
-        <td><a routerLink="/fiche_patient/{{patient.id}}"><button id="fiche">fiche</button></a></td>
+        <td>{{ patient.date_entree }}</td>
+        <td>{{ patient.date_sortie}}</td>
+        <td><a (click)="fiche(patient)"><button id="fiche">fiche</button></a></td>
        <td><a routerLink="/suivi_patient/{{patient.id}}"><button id="suivi">Suivi</button></a></td>
      </tr>
 </table>

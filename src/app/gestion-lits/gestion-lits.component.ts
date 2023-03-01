@@ -25,6 +25,6 @@ export class GestionLitsComponent implements OnInit {
   ngOnInit(): void {
     this.rooms = this.service.getRoomsList();
     this.beds = this.service.getBedsList();
-    this.patients = this.service.getlistePatient();
+    // this.patients = this.service.getlistePatient();
   }
 }

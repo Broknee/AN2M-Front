@@ -13,7 +13,7 @@ export class ListePatientComponent {
 
 
   @Input() listePatient!: patientModel[];
- @Input() patient!: patientModel
+ @Input() patient!: patientModel[]
 
  
 
@@ -22,8 +22,21 @@ export class ListePatientComponent {
   constructor(private service : Services, private route : Router) {}
 
   ngOnInit(): void { 
-    // this.listePatient = this.service.getlistePatient();  
+    
      
+this.service.getPatients().subscribe(data=>{
+  this.listePatient=data;
+  console.log(data)});
+       
+    }
+  
+    fiche(patient:any) {
+     
+      this.service.get = this.patient;
+      this.service.setFichePatient(patient);
+      this.route.navigateByUrl('fiche_patient/'+patient.id)   
+    }
+  
   }
 
   
@@ -31,4 +44,4 @@ export class ListePatientComponent {
 
 
 
-}
+

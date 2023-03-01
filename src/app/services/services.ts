@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { BedModel } from "../models/bed.model";
 import { RoomModel } from "../models/room.model";
 import { patientModel } from "../models/patient.model";
+import { SuiviModel } from "../models/suivi.model";
 
 
 
@@ -18,10 +19,30 @@ export class Services {
   private user$ = new BehaviorSubject<any>({});
   selectedUser$ = this.user$.asObservable();
 
+  private patient$ = new BehaviorSubject<any>({});
+  selectedPatient$ = this.patient$.asObservable();
+
+
+private suivi$ =  new BehaviorSubject<any>({});
+selectedSuivi$ = this.suivi$.asObservable();
+
+
   post !: UserGet[]
+  get !:patientModel[]
+  suivi!:SuiviModel[]
+
+
+  setSuivi(suivi:any){
+    this.suivi$.next(suivi);
+  }
+
 
   setUser(user: any) {
     this.user$.next(user);
+  }
+
+  setFichePatient(patient: any) {
+    this.patient$.next(patient);
   }
 
   getlistePersonnelbyId(id:Number) :UserGet {
@@ -39,9 +60,9 @@ export class Services {
 
 
 
-    getlistePatient() : patientModel[] {
-      return listePatient;
-}
+//     getlistePatient() : patientModel[] {
+//       return listePatient;
+// }
 
 // getlistePatientbyId(id:Number) :patientModel {
 //   let patientId!:patientModel
@@ -59,6 +80,8 @@ export class Services {
 private baseUrlpost = "http://localhost:8080/api/save";
 private getUrl = "http://localhost:8080/api/users";
 private baseUrlmodify= "http://localhost:8080/api/modifyUserInfo";
+private urlPatient = "http://localhost:8080/api/";
+private urlSuivi = "http://localhost:8080/api/suiviPatient"
 
 constructor(private http: HttpClient) { }
 postUser(user:UserDtoPost):Observable<UserDtoPost> {
@@ -68,12 +91,21 @@ modifyUser(user:UserGet):Observable<UserGet>{
   return this.http.post<UserGet>(this.baseUrlmodify,user);
 }
 
-
-
 getUsers(): Observable<UserGet[]>{
-  return this.http.get<UserGet[]>(this.getUrl);
+  return this.http.get<UserGet[]>(this.getUrl);  
+}
 
-  
+
+addComSuivi(suivi:SuiviModel):Observable<SuiviModel>{
+  return this.http.post<SuiviModel>(this.urlSuivi,suivi)
+}
+
+addPatient(patient:patientModel):Observable<patientModel>{
+  return this.http.post<patientModel>(this.urlPatient +'addPatient',patient)
+}
+
+getPatients():Observable<patientModel[]>{
+  return this.http.get<patientModel[]>(this.urlPatient+'ListPatient')
 }
 
 // Gestion des lits
@@ -142,73 +174,73 @@ export const listePersonnel  =
 
 
 
-    export const listePatient  =
-[
-    {  
+//     export const listePatient  =
+// [
+//     {  
        
-        id:1,
-        nom : "Durant",
-        prenom : "Philippe",
-        secu : "1294837890678",
-        adresse: "34, rue des lilas, 59000 Lille",
-        tel : "0600000002",
-        raison : "fracture à la jambe",
-        lit:1,
-        chambre:123,
-        // arrivee:new Date(),
-        // depart:new Date('2023-02-10'),
-        arrivee: "2023-02-03",
-        depart:"2023-02-10",
-        nom_urgence : "Durant",
-        prenom_urgence : "Elise",
-        tel_urgence : "0700000011"
+//         id:1,
+//         nom : "Durant",
+//         prenom : "Philippe",
+//         secu : "1294837890678",
+//         adresse: "34, rue des lilas, 59000 Lille",
+//         tel : "0600000002",
+//         raison : "fracture à la jambe",
+//         lit:1,
+//         chambre:123,
+//         // arrivee:new Date(),
+//         // depart:new Date('2023-02-10'),
+//         arrivee: "2023-02-03",
+//         depart:"2023-02-10",
+//         nom_urgence : "Durant",
+//         prenom_urgence : "Elise",
+//         tel_urgence : "0700000011"
         
-      },
+//       },
 
-      {  
+//       {  
        
-        id:2,
-        nom : "Masset",
-        prenom : "Marina",
-        secu : "1294837890679",
-        adresse: "38, avenue du Général, 59000 Lille",
-        tel : "0600000001",
-        raison : "opération du coeur",
-        lit:1,
-        chambre:123,
-        // arrivee:new Date('2023-02-01'),
-        // depart:new Date('2023-02-10'),
-        arrivee:'2023-02-01',
-        depart:'2023-02-10',
-        nom_urgence : "Masset",
-        prenom_urgence : "Do",
-        tel_urgence : "0700000009"
+//         id:2,
+//         nom : "Masset",
+//         prenom : "Marina",
+//         secu : "1294837890679",
+//         adresse: "38, avenue du Général, 59000 Lille",
+//         tel : "0600000001",
+//         raison : "opération du coeur",
+//         lit:1,
+//         chambre:123,
+//         // arrivee:new Date('2023-02-01'),
+//         // depart:new Date('2023-02-10'),
+//         arrivee:'2023-02-01',
+//         depart:'2023-02-10',
+//         nom_urgence : "Masset",
+//         prenom_urgence : "Do",
+//         tel_urgence : "0700000009"
         
-      },
+//       },
 
-      {  
+//       {  
        
-        id:3,
-        nom : "Doe",
-        prenom : "John",
-        secu : "1294837890680",
-        adresse : "56, rue Lafayette, 59000 Lille",
-        tel : "0600000000",
-        raison : "tendinite à l'épaule",
-        lit:1,
-        chambre:123,
-        // arrivee:new Date('2023-02-01'),
-        // depart:new Date('2023-02-10'),
-        arrivee:'2023-02-01',
-        depart:'2023-02-10',
-        nom_urgence : "Doe",
-        prenom_urgence : "Jessie",
-        tel_urgence : "0700000010"
+//         id:3,
+//         nom : "Doe",
+//         prenom : "John",
+//         secu : "1294837890680",
+//         adresse : "56, rue Lafayette, 59000 Lille",
+//         tel : "0600000000",
+//         raison : "tendinite à l'épaule",
+//         lit:1,
+//         chambre:123,
+//         // arrivee:new Date('2023-02-01'),
+//         // depart:new Date('2023-02-10'),
+//         arrivee:'2023-02-01',
+//         depart:'2023-02-10',
+//         nom_urgence : "Doe",
+//         prenom_urgence : "Jessie",
+//         tel_urgence : "0700000010"
         
-      }
+//       }
       
     
-    ]
+//     ]
 
     export const roomsList : RoomModel[] =
     [

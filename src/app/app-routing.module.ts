@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'gestion_patient', component: ListePatientComponent },
   { path: 'fiche_patient/:id', component: FichePatientComponent},
   { path: 'suivi_patient/:id', component: SuiviPatientComponent},
-  {path: 'ajout_patient', component:AjouterPatientComponent}
+  { path: 'ajout_patient', component:AjouterPatientComponent},
   { path: 'gestion_lits', component: GestionLitsComponent}
 ];
 

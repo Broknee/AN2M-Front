@@ -9,7 +9,7 @@
 <main>
     <div class="backgroundOpacity container">
         <div id="newPatientForm">
-            <form action="">
+            <form [formGroup]="ajoutPatientForm" (ngSubmit)="onSubmit()" action="">
                 <div class="containerForm">
                     <div class="container">
                         <div class="section">
@@ -33,7 +33,7 @@
                                 </div>
                                 <div>
                                     <label for="email">Email :</label>
-                                    <input type="text" formControlName="email" name="email" id="email">
+                                    <input type="text" formControlName="mail" name="mail" id="email">
                                 </div>
                                 <div >
                                     <label for="adresse">Adresse :</label>
@@ -50,15 +50,15 @@
                             <div class="form">
                                 <div>
                                     <label for="raison">Raison du séjour :</label>
-                                    <input type="text" formControlName="raison" name="raison" id="raison">
+                                    <input type="text" formControlName="raison_sejour" name="raison" id="raison">
                                 </div>
                                 <div>
                                     <label for="date_entree">Date d'arrivée :</label>
-                                    <input type="text" formControlName="entree" name="date_entree" id="date_entree">
+                                    <input type="text" formControlName="date_entree" name="date_entree" id="date_entree">
                                 </div>
                                 <div>
                                     <label for="date_sortie">Date de départ :</label>
-                                    <input type="text" formControlName="sortie" name="date_sortie" id="date_sortie">
+                                    <input type="text" formControlName="date_sortie" name="date_sortie" id="date_sortie">
                                 </div>
                             </div>
                         </div>
@@ -68,15 +68,15 @@
                             <div class="form">
                                 <div>
                                     <label for="nom_urgence">Nom :</label>
-                                    <input type="text" formControlName="nomU" name="nom_urgence" id="nom_urgence">
+                                    <input type="text" formControlName="nom_urgent" name="nom_urgence" id="nom_urgence">
                                 </div>
                                 <div>
                                     <label for="prenom_urgence">Prénom :</label>
-                                    <input type="text" formControlName="prenomU" name="prenom_urgence" id="prenom_urgence">
+                                    <input type="text" formControlName="prenom_urgent" name="prenom_urgence" id="prenom_urgence">
                                 </div>
                                 <div>
                                     <label for="tel_urgence">Téléphone :</label>
-                                    <input type="text" formControlName="telU" name="tel_urgence" id="tel_urgence">
+                                    <input type="text" formControlName="tel_urgent" name="tel_urgence" id="tel_urgence">
                                 </div>
                                 
                             </div>

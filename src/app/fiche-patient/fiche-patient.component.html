@@ -5,11 +5,9 @@
     <div class="backgroundOpacity container">
         <div id="suiviPatient" [ngClass]="{'hidden':hidden}">
             <h2>Suivi Patient</h2>
-            <h3>Commentaires récents :</h3> 
-            <div *ngFor="let suivi of commentsListById.slice(commentsListById.length -3)">
-                <p>{{suivi.comment}}</p>
-            </div>
-        <a id="suiviButton" routerLink="/suivi_patient/{{patient.id}}">Consulter le suivi</a>
+            <h3>Commentaires récents :</h3>
+        <a id="suiviButton" routerLink="/suivi_patient/">Consulter le suivi</a>
+        <a id="suiviButton" (click)="ajoutCommentaire()">commentaire</a>
         </div>
         
 
@@ -21,25 +19,25 @@
        
         <div id="infosPrincipales">
             <h1>
-                <!-- {{patient.prenom}} {{patient.nom}} -->
+                {{selectedPatient$.prenom}} {{selectedPatient$.nom}}
             </h1>
             <br>
             <div id="form">
             <div id="form1">
             <h3>N° sécurité sociale :</h3>
-            <!-- <p>{{patient.secu}}</p> -->
+            <p>{{selectedPatient$.secu}}</p>
             <h3>Adresse :</h3>
-            <!-- <p>{{patient.adresse}}</p> -->
+            <p>{{selectedPatient$.adresse}}</p>
             <h3>n°téléphone</h3>
-            <!-- <p>{{patient.tel}}</p> -->
+            <p>{{selectedPatient$.tel}}</p>
             </div>
             <div id="form2">
             <h3>Raison du séjour :</h3>
-            <!-- <p>{{patient.raison}}</p> -->
+            <p>{{selectedPatient$.raison_sejour}}</p>
             <h3>date d'arrivée :</h3>
-            <!-- <p>{{patient.arrivee}}</p> -->
+            <p>{{selectedPatient$.date_entree}}</p>
             <h3>date de départ :</h3>
-            <!-- <p>{{patient.depart}}</p> -->
+            <p>{{selectedPatient$.date_sortie}}</p>
         </div>
             </div>
     </div>
@@ -53,11 +51,11 @@
         <div id="contactsUrgence" [ngClass]="{'Hidden':Hidden}">
             <h2>Contact d'urgence</h2>
             <h3>Nom :</h3>
-            <!-- <p>{{patient.nom_urgence}}</p> -->
+            <p>{{selectedPatient$.nom_urgent}}</p>
             <h3>Prénom :</h3>
-            <!-- <p>{{patient.prenom_urgence}}</p> -->
+            <p>{{selectedPatient$.prenom_urgent}}</p>
             <h3>Téléphone :</h3>
-            <!-- <p>{{patient.tel_urgence}}</p> -->
+            <p>{{selectedPatient$.tel_urgent}}</p>
         </div>
 </div>
 
