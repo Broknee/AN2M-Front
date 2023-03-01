@@ -1,0 +1,96 @@
+h2 {
+    text-align: center;
+}
+
+main {
+    background-color: #7abcc8;
+    height:calc(100vh - 361px);
+}
+
+.headerTitle {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4F4F4;
+}
+
+.filters {
+    background-color: #7d1515;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+    padding:5px;
+}
+
+.filters div {
+    display:flex;
+    align-items: center;
+}
+
+.filters img {
+    width:35px;
+    margin:5px;
+}
+
+.containerRooms {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height:100%;
+    margin:50px;
+}
+
+.containerRooms h2 {
+    margin-bottom: 0;
+} 
+
+.room {
+    width: 32%;
+    height:350px;
+    margin:10px;
+    background-color: white;
+    border-radius: 20px;
+    flex-wrap: wrap;
+}
+
+.bedContainer {
+    height:calc(100% - 50px); 
+    /* 100% de hauteur - hauteur du h2 */
+    width:100%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bed {
+    background-color:#cce3e7;
+    border:black solid 3px;
+    height:80%;
+    width:28%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.bed>div, .bed>div>div  {
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.occupied {
+    background-color: #f55656;
+    border-radius: 10px;
+    color:#e1e1e1;
+    font-weight: 600;
+    text-shadow: black 1px 1px;
+}
+
+.occupied h3 {
+    color:#f4f4f4;
+    text-shadow: rgb(107, 107, 107) 1px 4px;
+}

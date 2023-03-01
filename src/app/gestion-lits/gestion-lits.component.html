@@ -1,1 +1,52 @@
 <app-header></app-header>
+<div class="headerTitle">
+    <h2>Gestion des lits </h2>
+</div>
+<div class="filters">
+    <div>
+        <p>filtre dates</p>
+        <img src="./assets/images/calendar.png" alt="calendrier">
+    </div>
+    <!-- <p>{{curDate | date:'dd/MM/yyyy'}}</p> -->
+    <div>
+        <img src="./assets/images/filter.png" alt="filtre affichage">
+        <p>affichage</p>
+    </div>
+</div>
+<main>
+    <div class="containerRooms">
+        <div class="room" *ngFor="let room of rooms">
+            <h2>Chambre {{room.id}}</h2>
+            <div class="bedContainer">
+                <ng-container *ngFor="let bed of beds">
+                    <div class="bed" *ngIf="room.id === bed.room_id;">
+                        <div>
+                            <div *ngIf="bed.status === 'libre'">
+                                <p>Lit n°{{bed.id}}</p>
+                                <p>disponible</p>
+                            </div>
+                    <!-- Contenu de la carte -->
+                            <div *ngIf="bed.status === 'occupé'" class="occupied">
+                                <div *ngFor="let patient of patients">
+                                    <div *ngIf="bed.patient_id === patient.id">
+                                        <p>Lit n°{{bed.id}}</p>
+                                        <h3>{{patient.nom}} {{patient.prenom}}</h3>
+                                        <p>Date d'entrée <br> {{patient.arrivee}} -->
+                                            <!-- {{ patient.arrivee | date: 'full'}}  -->
+                                        </p>
+                                        <p>Sortie prévue le <br> {{patient.depart}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </ng-container>
+                <!-- <div class="bed"></div>
+                <div class="bed"></div> -->
+            </div>
+        </div>
+    </div> 
+
+</main>
