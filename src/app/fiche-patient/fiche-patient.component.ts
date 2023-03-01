@@ -11,17 +11,20 @@ import { SuiviModel } from '../models/suivi.model';
 })
 export class FichePatientComponent {
 
-  @Input() patient!: patientModel
+  @Input() patient=new  patientModel()
   @Input() id!:Number
   @Input() commentsListById!: SuiviModel[]
 
   constructor(private service : Services, private route: ActivatedRoute ) {}
 
   ngOnInit(): void { 
-    this.id=this.route.snapshot.params["id"] 
-    //this.patient = this.service.getlistePatientbyId(this.id);  
-    //this.commentsListById = this.service.getCommentsListById(this.id);
-    console.log(this.commentsListById);
+    this.id=this.route.snapshot.params["id"];
+    console.log(this.id);
+
+    this.patient = this.service.getlistePatientbyId(this.id); 
+    console.log(this.patient); 
+    this.commentsListById = this.service.getCommentsListById(this.id);
+    //console.log(this.commentsListById);
      
   }
   hidden=true;
@@ -41,6 +44,7 @@ Contactvisible() {
   if(this.visiblity==false)  this.visiblity=true;
   else this.visiblity=false;
 }
+
 }
 
 

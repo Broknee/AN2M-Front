@@ -3,5 +3,6 @@ export class SuiviModel {
     comment!:String
     user_id!:Number
     patient_id!:Number
+    date!:String
     // date!:Date
 }

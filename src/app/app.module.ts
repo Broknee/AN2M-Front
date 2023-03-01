@@ -17,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { AjoutPersonnelComponent } from './ajout-personnel/ajout-personnel.component';
 import { ListePatientComponent } from './liste-patient/liste-patient.component';
 import { FichePatientComponent } from './fiche-patient/fiche-patient.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FichePatientComponent } from './fiche-patient/fiche-patient.component';
     AjoutPersonnelComponent,
     ListePatientComponent,
     FichePatientComponent,
+    ModalComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

@@ -4,7 +4,7 @@
     align-items: center;
     background-color:rgba(255,255,255, 0.8);    
     width:100vw;
-    height: 100vh;
+    height: calc(100vh - 150px);
 }
 
 main {
@@ -12,9 +12,8 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     width:100vw;
-    height: 100vh;
+    height: calc(100vh - 150px);
 } 
-
 
 
 .hidden {
@@ -135,3 +134,30 @@ h1 {
 #suiviButton:hover {
     background-color: #91c34f; 
 }
+
+@media (min-width: 1824px) { 
+    #infosPrincipales {
+        height: 70%;
+        width:35%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #plusSuivi,#plusContact, #contactsUrgence, #suiviPatient {
+        height: 50%;
+    }
+
+    #infosPrincipales h1, #contactsUrgence h2, #suiviPatient h2 {
+        margin-top: 0;
+    }
+
+    #suiviButton {
+        margin-top:20px;
+    }
+
+    .comment {
+        margin:10px;
+    }
+    
+ }

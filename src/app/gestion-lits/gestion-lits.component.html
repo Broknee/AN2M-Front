@@ -31,10 +31,10 @@
                                     <div *ngIf="bed.patient_id === patient.id">
                                         <p>Lit n°{{bed.id}}</p>
                                         <h3>{{patient.nom}} {{patient.prenom}}</h3>
-                                        <p>Date d'entrée <br> {{patient.arrivee}} -->
-                                            <!-- {{ patient.arrivee | date: 'full'}}  -->
+                                        <p>Date d'entrée <br> {{patient.date_entree}
+                                            <!-- {{ patient.date_entree | date: 'full'}}  -->
                                         </p>
-                                        <p>Sortie prévue le <br> {{patient.depart}}</p>
+                                        <p>Sortie prévue le <br> {{patient.date_sortie}}/p>
                                     </div>
                                 </div>
                             </div>
@@ -50,3 +50,4 @@
     </div> 
 
 </main>
+
