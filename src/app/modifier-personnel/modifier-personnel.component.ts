@@ -15,9 +15,9 @@ export class ModifierPersonnelComponent implements OnInit {
 
    @ Input() modifPerso!: UserGet
 
-   @Input() selectedUser$ !:UserDtoPost
+   @Input() selectedUser$ !:UserGet
 
-  @Input() id!:Number  // on crée la variable ID 
+ // @Input() id!:Number  // on crée la variable ID 
   constructor( private fb: FormBuilder,private service:Services, private route: ActivatedRoute ){ 
     // on crée le constructeur composé du service et de la route
     {

@@ -11,11 +11,11 @@ export class personnelModel {
 
 export class UserGet {
     id! : number;
-    firstName!: string;
-    lastName!: string;
-    email!: string;
+    firstName!:string;
+    lastName!:string;
+    email!:string;
     password!:string
-    roles!:string[] 
+    roles!: string[] 
 }
 
 export class UserDtoPost {
@@ -23,8 +23,8 @@ export class UserDtoPost {
     firstName!: string;
     lastName!: string;
     email!: string;
-    roles!:string[] 
     password!:string
-    assignation!:string[]
+    roles!:string[]
+    assignation!:string
   
 }

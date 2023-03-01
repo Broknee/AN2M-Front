@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserDtoPost, UserGet } from '../models/personnel.model';
+import { UserDtoPost} from '../models/personnel.model';
 import { Services } from '../services/services';
 
 @Component({
@@ -11,44 +11,46 @@ import { Services } from '../services/services';
 export class AjoutPersonnelComponent {
 
   ajoutPersoForm : FormGroup;
-  ajouPerson!:UserDtoPost
+  @Input() ajoutPerson= new  UserDtoPost();
  
 
-  @Input() id!:Number  // on crée la variable ID 
+  //@Input() id!:Number  // on crée la variable ID 
   constructor( private fb: FormBuilder,private service:Services ){ 
     // on crée le constructeur composé du service et de la route
-    {
+    
 
       this.ajoutPersoForm = this.fb.group({
-       
-        nom: ['',Validators.requiredTrue],
-        prenom:[''],
+
+        nom: [''],
+        prenom: [''],
         username:[''],
         mail: [''],
         mdp: [''],
-        role:['']
+        roles:['']
       });
-    } 
+     
   }
-  ngOnInit():void {}
+  ngOnInit():void { }
    
    
     onSubmit() {
+      
+      
+   this.ajoutPerson.password = this.ajoutPersoForm.value.mdp;
+   this.ajoutPerson.assignation=this.ajoutPersoForm.value.roles;
+      this.ajoutPerson.lastName = this.ajoutPersoForm.value.nom;
+      this.ajoutPerson.firstName= this.ajoutPersoForm.value.prenom;
+  this.ajoutPerson.email = this.ajoutPersoForm.value.mail;
+    console.log(this.ajoutPerson.password)
+ //this.ajoutPerson = this.ajoutPersoForm.value;
 
-      console.log(this.ajoutPersoForm.value)
- this.ajouPerson = this.ajoutPersoForm.value;
- this.ajouPerson.lastName = this.ajoutPersoForm.value.nom
  
-   this.ajouPerson.firstName = this.ajoutPersoForm.value.prenom
-  
-  this.ajouPerson.email = this.ajoutPersoForm.value.mail
-
-   this.ajouPerson.password = this.ajoutPersoForm.value.mdp
-   this.ajouPerson.assignation[0]=this.ajoutPersoForm.value.role
-
    
- 
-   this.service.postUser(this.ajouPerson).subscribe({
+
+
+   console.log(this.ajoutPerson)
+
+   this.service.postUser(this.ajoutPerson).subscribe({
      next: (data)=>console.log(data),
    error: err=>console.log(err)
  });
