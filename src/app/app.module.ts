@@ -18,6 +18,7 @@ import { AjoutPersonnelComponent } from './ajout-personnel/ajout-personnel.compo
 import { ListePatientComponent } from './liste-patient/liste-patient.component';
 import { FichePatientComponent } from './fiche-patient/fiche-patient.component';
 import { AjouterPatientComponent } from './ajouter-patient/ajouter-patient.component';
+import { ModifierPatientComponent } from './modifier-patient/modifier-patient.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AjouterPatientComponent } from './ajouter-patient/ajouter-patient.compo
     ListePatientComponent,
     FichePatientComponent,
     AjouterPatientComponent,
+    ModifierPatientComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

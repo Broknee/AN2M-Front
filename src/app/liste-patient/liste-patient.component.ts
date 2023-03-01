@@ -36,6 +36,13 @@ this.service.getPatients().subscribe(data=>{
       this.service.setFichePatient(patient);
       this.route.navigateByUrl('fiche_patient/'+patient.id)   
     }
+
+    modif(patient:any) {
+     
+      this.service.get = this.patient;
+      this.service.setFichePatient(patient);
+      this.route.navigateByUrl('modifier_patient/'+patient.id)   
+    }
   
   }
 

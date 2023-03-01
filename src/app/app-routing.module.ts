@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { ModifierPersonnelComponent } from './modifier-personnel/modifier-personnel.component';
 import { SuiviPatientComponent } from './suivi-patient/suivi-patient.component';
 import { GestionLitsComponent } from './gestion-lits/gestion-lits.component';
+import { ModifierPatientComponent } from './modifier-patient/modifier-patient.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'fiche_patient/:id', component: FichePatientComponent},
   { path: 'suivi_patient/:id', component: SuiviPatientComponent},
   { path: 'ajout_patient', component:AjouterPatientComponent},
-  { path: 'gestion_lits', component: GestionLitsComponent}
+  { path: 'gestion_lits', component: GestionLitsComponent},
+  { path: 'modifier_patient/:id', component:ModifierPatientComponent}
 ];
 
 @NgModule({

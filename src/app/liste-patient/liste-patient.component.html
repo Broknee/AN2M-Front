@@ -40,6 +40,7 @@
         <td>{{ patient.date_entree }}</td>
         <td>{{ patient.date_sortie}}</td>
         <td><a (click)="fiche(patient)"><button id="fiche">fiche</button></a></td>
+        <td><a (click)="modif(patient)"><button id="fiche">Modifier fiche</button></a></td>
        <td><a routerLink="/suivi_patient/{{patient.id}}"><button id="suivi">Suivi</button></a></td>
      </tr>
 </table>

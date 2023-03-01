@@ -91,6 +91,10 @@ modifyUser(user:UserGet):Observable<UserGet>{
   return this.http.post<UserGet>(this.baseUrlmodify,user);
 }
 
+modifyPatient(patient:patientModel):Observable<patientModel>{
+  return this.http.post<patientModel>(this.urlPatient + 'modifPatient',patient);
+}
+
 getUsers(): Observable<UserGet[]>{
   return this.http.get<UserGet[]>(this.getUrl);  
 }

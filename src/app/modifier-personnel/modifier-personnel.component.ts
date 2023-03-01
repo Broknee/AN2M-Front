@@ -23,9 +23,9 @@ export class ModifierPersonnelComponent implements OnInit {
     {
 
       this.modifPersoForm = this.fb.group({
-        nom: ['',Validators.required],
-        prenom:['',Validators.required],
-        mail: ['',Validators.required, Validators.email],
+        nom: ['',],
+        prenom:['',],
+        mail: ['', Validators.email],
   
       });
     } 
