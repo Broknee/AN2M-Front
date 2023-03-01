@@ -1,12 +1,18 @@
-<div id="modal-content-wrapper">
-  <header id="modal-header">
-      <h1 id="modal-title">Project List</h1>
+<div id="modalCard">
+  <header>
+      <h1>Suivi de {{patient.nom}} {{patient.prenom}} :</h1>
   </header>
-  <ul>
-      <li>{{patient.id}}</li>
-      
-  </ul>
-  <footer id="modal-footer">
-      <button id="closeModal" (click)="closeModal()">Close</button>
+      <form action="">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+      </form>
+      <!-- <form [formGroup]="ajoutCommentaire" id="ajoutForm" (ngSubmit)="onSubmit()" >
+        <label for="nom">Commentaire :</label>
+        <input type="text" formControlName="com" placeholder="" />
+        
+        <button id="b_connexion" >Valider</button>
+      </form> -->
+  <footer>
+      <button id="closeModal" (click)="closeModal()">Fermer</button>
+      <button id="addComment">Ajouter le commentaire</button>
   </footer>
 </div>

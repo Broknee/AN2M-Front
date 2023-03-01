@@ -124,7 +124,7 @@ h1 {
 
 #suiviButton {
     text-decoration:none;
-    background-color: #A1CB6B ;
+    background-color: #5dc1c3;
     color:#F4F4F4;
     border-radius: 20px;
     width:150px;
@@ -132,7 +132,21 @@ h1 {
 }
 
 #suiviButton:hover {
-    background-color: #91c34f; 
+    background-color: #3ebdc0; 
+}
+
+#modalButton {
+    background-color: #94cb4c ;
+    color:#F4F4F4;
+    border:none;
+    border-radius: 40px;
+    width:150px;
+    padding:10px;
+    margin-top:10px;
+}
+
+#modalButton:hover {
+    background-color: #85c634; 
 }
 
 @media (min-width: 1824px) { 

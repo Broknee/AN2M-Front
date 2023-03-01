@@ -51,9 +51,9 @@ Contactvisible() {
 }
 
 openModal() {
-  this.dialogConfig.id = "modal";
-    this.dialogConfig.height = "500px";
-    this.dialogConfig.width = "650px";
+    this.dialogConfig.id = "modal";
+    // this.dialogConfig.height = "500px";
+    // this.dialogConfig.width = "650px";
     this.dialogConfig.data = { patient : this.patient };
     this.modalDialog = this.matDialog.open(ModalComponent, this.dialogConfig);
 }
