@@ -41,8 +41,6 @@ export class AjoutPersonnelComponent {
       this.ajoutPerson.lastName = this.ajoutPersoForm.value.nom;
       this.ajoutPerson.firstName= this.ajoutPersoForm.value.prenom;
   this.ajoutPerson.email = this.ajoutPersoForm.value.mail;
-    console.log(this.ajoutPerson.password)
- //this.ajoutPerson = this.ajoutPersoForm.value;
 
  
    

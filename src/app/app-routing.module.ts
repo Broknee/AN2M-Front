@@ -5,6 +5,7 @@ import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component';
 import { AccueilInfirmiersComponent } from './accueil-infirmiers/accueil-infirmiers.component';
 import { AccueilSecretaireComponent } from './accueil-secretaire/accueil-secretaire.component';
 import { AjoutPersonnelComponent } from './ajout-personnel/ajout-personnel.component';
+import { AjouterPatientComponent } from './ajouter-patient/ajouter-patient.component';
 import { FichePatientComponent } from './fiche-patient/fiche-patient.component';
 import { ListeGestionPersonnelComponent } from './liste-gestion-personnel/liste-gestion-personnel.component';
 import { ListePatientComponent } from './liste-patient/liste-patient.component';
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'gestion_patient', component: ListePatientComponent },
   { path: 'fiche_patient/:id', component: FichePatientComponent},
   { path: 'suivi_patient/:id', component: SuiviPatientComponent},
-  
+  {path: 'ajout_patient', component:AjouterPatientComponent}
 ];
 
 @NgModule({

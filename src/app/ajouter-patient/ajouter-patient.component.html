@@ -1,0 +1,94 @@
+
+<app-header></app-header>
+
+
+<div id="titre">
+    <h1>Création patient</h1>
+</div>
+
+<main>
+    <div class="backgroundOpacity container">
+        <div id="newPatientForm">
+            <form action="">
+                <div class="containerForm">
+                    <div class="container">
+                        <div class="section">
+                            <h2>Informations personnelles</h2>
+                            <div class="form">
+                                <div>
+                                    <label for="nom">Nom :</label>
+                                    <input type="text" formControlName="nom" id="nom">
+                                </div>
+                                <div>
+                                    <label for="prenom">Prénom :</label>
+                                    <input type="text" formControlName="prenom" name="prenom" id="prenom">
+                                </div>
+                                <div>
+                                    <label for="secu">N° sécurité sociale :</label>
+                                    <input type="text" formControlName="secu" name="secu" id="secu">
+                                </div>
+                                <div>
+                                    <label for="tel">Téléphone :</label>
+                                    <input type="text" formControlName="tel" name="tel" id="tel">
+                                </div>
+                                <div>
+                                    <label for="email">Email :</label>
+                                    <input type="text" formControlName="email" name="email" id="email">
+                                </div>
+                                <div >
+                                    <label for="adresse">Adresse :</label>
+                                    <input type="text" formControlName="adresse" name="adresse" id="adresse">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="verticalLine">
+                    </div>                
+                    <div class="container rightSide">
+                        <div class="section">
+                            <h2>Séjour à l'hôpital</h2>
+                            <div class="form">
+                                <div>
+                                    <label for="raison">Raison du séjour :</label>
+                                    <input type="text" formControlName="raison" name="raison" id="raison">
+                                </div>
+                                <div>
+                                    <label for="date_entree">Date d'arrivée :</label>
+                                    <input type="text" formControlName="entree" name="date_entree" id="date_entree">
+                                </div>
+                                <div>
+                                    <label for="date_sortie">Date de départ :</label>
+                                    <input type="text" formControlName="sortie" name="date_sortie" id="date_sortie">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="horizontalLine"></div>
+                        <div class="section">
+                            <h2>Contact d'urgence</h2>
+                            <div class="form">
+                                <div>
+                                    <label for="nom_urgence">Nom :</label>
+                                    <input type="text" formControlName="nomU" name="nom_urgence" id="nom_urgence">
+                                </div>
+                                <div>
+                                    <label for="prenom_urgence">Prénom :</label>
+                                    <input type="text" formControlName="prenomU" name="prenom_urgence" id="prenom_urgence">
+                                </div>
+                                <div>
+                                    <label for="tel_urgence">Téléphone :</label>
+                                    <input type="text" formControlName="telU" name="tel_urgence" id="tel_urgence">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="container">
+                    <button type="submit">Valider</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
