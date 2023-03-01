@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserDtoPost, UserGet} from '../models/personnel.model';
 import { Services } from '../services/services';
 
@@ -10,7 +10,7 @@ import { Services } from '../services/services';
   styleUrls: ['./modifier-personnel.component.css']
 })
 export class ModifierPersonnelComponent implements OnInit {
-
+  submitted = false;
   modifPersoForm : FormGroup;
 
    @ Input() modifPerso!: UserGet
@@ -18,21 +18,21 @@ export class ModifierPersonnelComponent implements OnInit {
    @Input() selectedUser$ !:UserGet
 
  // @Input() id!:Number  // on crée la variable ID 
-  constructor( private fb: FormBuilder,private service:Services, private route: ActivatedRoute ){ 
+  constructor( private fb: FormBuilder,private service:Services, private route: ActivatedRoute, private router: Router ){ 
     // on crée le constructeur composé du service et de la route
     {
 
       this.modifPersoForm = this.fb.group({
-        nom: [''],
-        prenom:[''],
-        mail: [''],
+        nom: ['',Validators.required],
+        prenom:['',Validators.required],
+        mail: ['',Validators.required, Validators.email],
   
       });
     } 
   }
   ngOnInit():void {
-    
-
+   
+   
 
 
 this.service.selectedUser$.subscribe((value) => {
@@ -52,16 +52,19 @@ onSubmit() {
  if(this.modifPersoForm.value.mail)
  { this.selectedUser$.email = this.modifPersoForm.value.mail}
  console.log(this.selectedUser$)
-  
+ this.submitted = true;
+ if (this.modifPersoForm.invalid) {
+  return;
+}
+
+
 
   this.service.modifyUser(this.selectedUser$).subscribe({
     next: (data)=>console.log(data),
   error: err=>console.log(err)
 });
-   
-
-
-
+alert("les modifications ont été prises en compte")
+this.router.navigateByUrl('/gestion_personnel')
 
 }
 }

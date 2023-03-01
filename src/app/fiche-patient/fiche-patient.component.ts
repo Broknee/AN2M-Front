@@ -57,7 +57,7 @@ ajoutCommentaire() {
     this.service.addComSuivi(this.commentaire).subscribe(
       data=>console.log(data)
     )
-      console.log("COMMENTAIRE="+this.commentaire);
+      console.log("COMMENTAIRE="+this.commentaire.comm);
 }
 
 

@@ -4,7 +4,7 @@ h2 {
 
 main {
     background-color: #7abcc8;
-    height:calc(100vh - 361px);
+    height:100vh;
 }
 
 .headerTitle {
@@ -36,11 +36,12 @@ main {
 
 .containerRooms {
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     height:100%;
-    margin:50px;
+    overflow: scroll;
+    margin: 0px 50px 0px 50px;
 }
 
 .containerRooms h2 {
