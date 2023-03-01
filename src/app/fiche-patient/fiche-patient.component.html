@@ -10,7 +10,8 @@
                 <p class="comment">{{suivi.comment}}</p>
             </div>
         <a id="suiviButton" routerLink="/suivi_patient/{{patient.id}}" >Consulter le suivi</a>
-        </div>
+        <button (click)="openModal()"> Ajouter un commentaire </button>
+    </div>
 
 
         <div  id="plusSuivi">

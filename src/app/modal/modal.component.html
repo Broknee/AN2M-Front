@@ -1,27 +1,12 @@
-<ol>
-    <li>
-      <mat-form-field appearance="fill">
-        <mat-label>What's your name?</mat-label>
-        <input matInput [(ngModel)]="name">
-      </mat-form-field>
-    </li>
-    <li>
-      <button mat-raised-button (click)="openDialog()">Pick one</button>
-    </li>
-    <li *ngIf="animal">
-      You chose: <i>{{animal}}</i>
-    </li>
-  </ol>
-
-<h1 mat-dialog-title>Hi {{data.name}}</h1>
-<div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field appearance="fill">
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput [(ngModel)]="data.animal">
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+<div id="modal-content-wrapper">
+  <header id="modal-header">
+      <h1 id="modal-title">Project List</h1>
+  </header>
+  <ul>
+      <li>{{patient.id}}</li>
+      
+  </ul>
+  <footer id="modal-footer">
+      <button id="closeModal" (click)="closeModal()">Close</button>
+  </footer>
 </div>

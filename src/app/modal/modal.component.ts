@@ -1,52 +1,31 @@
+import { OnInit } from '@angular/core';
 //https://material.angular.io/components/dialog/overview
 
 import { Component, Inject } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { patientModel } from '../models/patient.model';
 
-export interface DialogData {
-  animal: string;
-  name: string;
-}
 
-/**
- * @title Dialog Overview
- */
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
-export class ModalComponent {
-  animal!: string;
-  name!: string;
+export class ModalComponent implements OnInit {
 
+  patient!: patientModel;
 
-constructor(public dialog: MatDialog) {}
+constructor(public dialog: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public parentData: {patient : patientModel}) {}
 
-openDialog(): void {
-  const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-    data: {name: this.name, animal: this.animal},
-  });
+ngOnInit(): void {
+    this.patient = this.parentData.patient;
+  }
 
-  dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
-    this.animal = result;
-  });
+closeModal() {
+  this.dialog.close();
 }
 }
 
-@Component({
-selector: 'dialog-overview-example-dialog',
-templateUrl: 'dialog-overview-example-dialog.html',
-})
-export class DialogOverviewExampleDialog {
-constructor(
-  public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-  @Inject(MAT_DIALOG_DATA) public data: DialogData,
-) {}
 
-onNoClick(): void {
-  this.dialogRef.close();
-}
-}
+
