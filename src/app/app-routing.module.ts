@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component';
 import { AccueilInfirmiersComponent } from './accueil-infirmiers/accueil-infirmiers.component';
 import { AccueilSecretaireComponent } from './accueil-secretaire/accueil-secretaire.component';
+import { FichePatientComponent } from './fiche-patient/fiche-patient.component';
 import { AjoutPersonnelComponent } from './ajout-personnel/ajout-personnel.component';
 import { FichePatientComponent } from './fiche-patient/fiche-patient.component';
 import { ListeGestionPersonnelComponent } from './liste-gestion-personnel/liste-gestion-personnel.component';
