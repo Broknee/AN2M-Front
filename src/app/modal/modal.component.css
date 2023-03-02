@@ -1,4 +1,6 @@
 textarea {
     border:1px solid rgb(113, 113, 113);
-    height: 80px;
+    height: 120px;
+    width:350px;
+    border-radius: 10px;
 }

@@ -26,9 +26,9 @@ a:visited {
     left:20%;
 }
 
-#cdk-overlay-0 {
-    width: 400px;
-    height:200px;
+#cdk-overlay-0, #modalCard {
+    width: 450px;
+    height:300px;
 }
 
 #modalCard {
@@ -68,5 +68,16 @@ a:visited {
 }
 
 #addComment, #closeModal {
-    margin:5px;
+    margin:20px 5px;
+    padding:10px;
+}
+
+#modal form {
+    display:flex;
+    flex-direction: column;
+}
+
+#modal footer {
+    display: flex;
+    justify-content: center;
 }
