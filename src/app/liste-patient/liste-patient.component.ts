@@ -4,6 +4,8 @@ import { patientModel } from '../models/patient.model';
 import { personnelModel } from '../models/personnel.model';
 import { Services } from '../services/services';
 
+
+
 @Component({
   selector: 'app-liste-patient',
   templateUrl: './liste-patient.component.html',
@@ -11,15 +13,14 @@ import { Services } from '../services/services';
 })
 export class ListePatientComponent {
 
-
   @Input() listePatient!: patientModel[];
  @Input() patient!: patientModel[]
+ @Input() types!: patientModel[];
 
- 
-
-
+ searchText!: any;
 
   constructor(private service : Services, private route : Router) {}
+
 
   ngOnInit(): void { 
     

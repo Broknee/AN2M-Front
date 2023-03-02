@@ -7,34 +7,27 @@
 <main>
     <div class="backgroundOpacity container">
         <div id="ajoutButton">
-      
             <a routerLink="/ajout_patient"><button>Ajouter un nouveau patient</button></a>
         </div>
 
 
-    <div id="recherche">
-        <form action="">
-            <label>Rechercher par:</label>
-            <select name="type" id="type">
-                <option></option>
-                <option>Nom</option>
-                <option>Prénom</option>
-                <option>Mail</option>
-            </select>
-            <input type="text">
-            <button>recherche</button>
-        </form>
+    <div id="search">
+        <p>Rechercher un patient :</p>
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Veuillez entrer le nom, prénom ou email de la personne à rechercher">
     </div>
+
+
+
     <div id="liste">
         <table>
-            <tr>
+            <thead>
             <th>nom</th>
             <th>prénom</th>
             <th>date d'arrivée</th>
             <th>date de fin de séjour</th>
-            </tr>
-            <tr>
-     <tr class="liste" *ngFor="let patient of listePatient"> 
+            </thead>
+    <tbody>
+    <tr class="liste" *ngFor="let patient of listePatient | filter:searchText"> 
         <td>{{ patient.nom}}</td>
         <td>{{ patient.prenom }}</td>
         <td>{{ patient.date_entree }}</td>
@@ -43,6 +36,7 @@
         <td><a (click)="modif(patient)"><button id="fiche">Modifier fiche</button></a></td>
        <td><a routerLink="/suivi_patient/{{patient.id}}"><button id="suivi">Suivi</button></a></td>
      </tr>
+    </tbody>   
 </table>
 </div>
 </div>

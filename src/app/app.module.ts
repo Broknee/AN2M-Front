@@ -21,6 +21,8 @@ import { AjouterPatientComponent } from './ajouter-patient/ajouter-patient.compo
 import { ModifierPatientComponent } from './modifier-patient/modifier-patient.component';
 import { ModalComponent } from './modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     ModifierPatientComponent,
     ModalComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, MatDialogModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, MatDialogModule, Ng2SearchPipeModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
