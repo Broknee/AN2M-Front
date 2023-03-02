@@ -4,7 +4,7 @@
     align-items: center;
     background-color:rgba(255,255,255, 0.8);    
     width:100vw;
-    height: 100vh;
+    height: calc(100vh - 150px);
 }
 
 main {
@@ -12,9 +12,8 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     width:100vw;
-    height: 100vh;
+    height: calc(100vh - 150px);
 } 
-
 
 
 .hidden {
@@ -125,7 +124,7 @@ h1 {
 
 #suiviButton {
     text-decoration:none;
-    background-color: #A1CB6B ;
+    background-color: #5dc1c3;
     color:#F4F4F4;
     border-radius: 20px;
     width:150px;
@@ -133,5 +132,46 @@ h1 {
 }
 
 #suiviButton:hover {
-    background-color: #91c34f; 
+    background-color: #3ebdc0; 
 }
+
+#modalButton {
+    background-color: #94cb4c ;
+    color:#F4F4F4;
+    border:none;
+    border-radius: 40px;
+    width:150px;
+    padding:10px;
+    margin-top:10px;
+}
+
+#modalButton:hover {
+    background-color: #85c634; 
+}
+
+@media (min-width: 1824px) { 
+    #infosPrincipales {
+        height: 70%;
+        width:35%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #plusSuivi,#plusContact, #contactsUrgence, #suiviPatient {
+        height: 50%;
+    }
+
+    #infosPrincipales h1, #contactsUrgence h2, #suiviPatient h2 {
+        margin-top: 0;
+    }
+
+    #suiviButton {
+        margin-top:20px;
+    }
+
+    .comment {
+        margin:10px;
+    }
+    
+ }

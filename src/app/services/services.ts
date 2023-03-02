@@ -6,6 +6,7 @@ import { BedModel } from "../models/bed.model";
 import { RoomModel } from "../models/room.model";
 import { patientModel } from "../models/patient.model";
 import { SuiviModel } from "../models/suivi.model";
+import { SuiviModel } from "../models/suivi.model";
 
 
 
@@ -64,17 +65,27 @@ selectedSuivi$ = this.suivi$.asObservable();
 //       return listePatient;
 // }
 
-// getlistePatientbyId(id:Number) :patientModel {
-//   let patientId!:patientModel
+getCommentsListById(id:Number) : SuiviModel[] {
+  let commentsListById:SuiviModel[] = [];
+  for (let i = 0; i < commentsList.length; i++) {
+    if (commentsList[i].patientid == id) {
+      commentsListById.push(commentsList[i]);
+    }
+  }
+  return commentsListById;
+}
 
-//   for(let i=0;i<listePatient.length;i++){
-//     if(listePatient[i].id == id) {
-//       patientId = listePatient[i];
-//     }
+getlistePatientbyId(id:Number) :patientModel {
+  let patientId!:patientModel
+
+  for(let i=0;i<listePatients.length;i++){
+    if(listePatients[i].id == id) {
+      patientId = listePatients[i];
+    }
     
-//   }
-//     return patientId;
-// }
+  }
+    return patientId;
+}
 
 
 private baseUrlpost = "http://localhost:8080/api/save";
@@ -123,56 +134,38 @@ getBedsList() : BedModel[] {
 
 }
 
-export const listePersonnel  =
-[
-    {  
-       
-        id:1,
-        nom : "Doe",
-        prenom : "John",
-        mail : "doejohn@gmail.com",
-        username: "JohnDoe",
-        mdp:"123",
-        role:"infirmier"
-       
-        
-      },
-
-      
-      {  
-       
-        id:2,
-        nom : "Diallo",
-        prenom : "Mamadou",
-        mail : "diallomamadou@gmail.com",
-        username: "Mamadou",
-        mdp:"123",
-        role:"admin"
-        
-      },
-
-      {  
-       
-        id:3,
+    export const listePatients : patientModel []= 
+    [
+      {
+        id : 1,
         nom : "Masset",
         prenom : "Marina",
+        secu: "0389328459128",
+        adresse : "14, rue des Lilas 59000 Lille",
+        tel:"0600000000",
         mail : "massetmaria@gmail.com",
-        username:"Marina",
-        mdp:"123",
-        role:"secrétaire"
-        
+        date_entree : "24/2/2023",
+        date_sortie : "1/4/2023",
+        nom_urgent: "Fournier",
+        prenom_urgent:"Marie-Thérèse",
+        tel_urgent:"0700000000",
+        raison_sejour:"fracture"
       },
-      
-      {  
-       
-        id:4,
-        nom : "Fournier",
-        prenom : "Marie",
-        mail : "fourniermarie@gmail.com",
-        username: "Marie",
-        mdp:"123",
-        role:"infirmier"
-      
+
+      {
+        id : 2,
+        nom : "V",
+        prenom : "V",
+        secu: "0389328459129",
+        adresse : "14, rue des Lilas 59000 Lille",
+        tel:"0600000009",
+        mail : "massetmarina@gmail.com",
+        date_entree : "24/2/2023",
+        date_sortie : "1/4/2023",
+        nom_urgent: "Fournier",
+        prenom_urgent:"Marie-Paule",
+        tel_urgent:"0700000000",
+        raison_sejour:"fracture"
       }
     ]
 
@@ -267,6 +260,56 @@ export const listePersonnel  =
         id:306
       }
     ]
+
+    export const commentsList : SuiviModel[] =
+    [
+        {  
+           
+            id:1,
+            comment : "Piqûre à 8h, chambre 301, le patient a fait une réaction allergique au produit injecté, changement de traitement.",
+            user_id : 1,
+            patient_id : 1,
+            date:"2023-02-10"
+          },
+    
+          {  
+           
+            id:2,
+            comment : "Piqûre à 8h, chambre 301, le patient a fait une réaction allergique au produit injecté, changement de traitement.",
+            user_id : 4,
+            patient_id : 2,
+            date:"2023-02-11"
+          },
+    
+          {  
+           
+            id:3,
+            comment : "Piqûre à 10h",
+            user_id : 4,
+            patient_id : 2,
+            date:"2023-02-11"
+          },
+    
+          {  
+           
+            id:4,
+            comment : "Piqûre à 11h",
+            user_id : 1,
+            patient_id : 2,
+            date:"2023-02-12"
+          },
+    
+          {  
+           
+            id:4,
+            comment : "Piqûre à 12h",
+            user_id : 4,
+            patient_id : 2,
+            date:"2023-02-12"
+          },
+          
+        
+        ]
 
     export const bedsList : BedModel[] =
 [

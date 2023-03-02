@@ -3,15 +3,70 @@ body {
     margin:0;
 }
 
-
-
-
 a {
-    
-        text-decoration: none;
-    
+    text-decoration: none;
+    color:black;
 }
 
 a:visited {
-    color: black;
+    color:black;
+}
+
+/* css modal */
+.mat-mdc-dialog-surface {
+    background-color: #FFFFFF !important;
+    display: flex!important; 
+    justify-content: center!important;
+    border-radius: 30px!important;
+}
+
+.cdk-overlay-container {
+    position:absolute;
+    top:60%;
+    left:20%;
+}
+
+#cdk-overlay-0 {
+    width: 400px;
+    height:200px;
+}
+
+#modalCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal h1 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#closeModal {
+    border-radius: 10px;
+    padding:5px;
+    background-color: rgb(181, 48, 48);
+    color:#F4F4F4;
+    border:none;
+}
+
+#closeModal:hover{
+    background-color: rgb(160, 15, 15);
+}
+
+#addComment {
+    border-radius: 10px;
+    padding:5px;
+    background-color: #94cb4c; 
+    color:#F4F4F4;
+    border:none;
+}
+
+#addComment:hover {
+    background-color:#85c634;
+}
+
+#addComment, #closeModal {
+    margin:5px;
 }

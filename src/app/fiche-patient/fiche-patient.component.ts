@@ -1,8 +1,10 @@
+import { ModalComponent } from './../modal/modal.component';
 import { Component, Input, OnInit } from '@angular/core';
 import { patientModel } from '../models/patient.model';
 import { Services } from '../services/services';
 import { ActivatedRoute } from '@angular/router';
 import { SuiviModel } from '../models/suivi.model';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-fiche-patient',
@@ -18,7 +20,10 @@ export class FichePatientComponent {
   @Input() commentaire = new SuiviModel()
 
 
-  constructor(private service : Services, private route: ActivatedRoute ) {}
+  dialogConfig = new MatDialogConfig();
+  modalDialog: MatDialogRef<ModalComponent, any> | undefined;
+
+  constructor(private service : Services, private route: ActivatedRoute,public matDialog: MatDialog ) {}
 
   ngOnInit(): void { 
     this.id=this.route.snapshot.params["id"] 
@@ -61,6 +66,13 @@ ajoutCommentaire() {
 }
 
 
+openModal() {
+    this.dialogConfig.id = "modal";
+    // this.dialogConfig.height = "600px";
+    // this.dialogConfig.width = "650px";
+    this.dialogConfig.data = { patient : this.patient };
+    this.modalDialog = this.matDialog.open(ModalComponent, this.dialogConfig);
+}
 }
 
 

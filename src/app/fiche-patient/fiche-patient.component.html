@@ -10,6 +10,14 @@
         <a id="suiviButton" (click)="ajoutCommentaire()">commentaire</a>
         </div>
         
+            <h3>Commentaires récents :</h3> 
+            <div *ngFor="let suivi of commentsListById.slice(commentsListById.length -3)">
+                <p class="comment">{{suivi.comment}}</p>
+            </div>
+        <a id="suiviButton" routerLink="/suivi_patient/{{patient.id}}" >Consulter le suivi</a>
+        <button id="modalButton" (click)="openModal()"> Ajouter un commentaire </button>
+    </div>
+
 
         <div  id="plusSuivi">
             <p>Suivi</p>
@@ -43,8 +51,8 @@
     </div>
         <div id="plusContact" >
             <p>Contact Urgence</p>
-            <img  src="../../assets/images/plus.png" (click)="Contactvisible()"  *ngIf="visiblity">
-            <img src="../../assets/images/minus.png" (click)="Contactvisible()" *ngIf="!visiblity">
+            <img  src="../../assets/images/plus.png" (click)="Contactvisible()"  *ngIf="visiblity" alt="icône plus">
+            <img src="../../assets/images/minus.png" (click)="Contactvisible()" *ngIf="!visiblity" alt="icône moins">
             
         </div>
 
@@ -59,4 +67,6 @@
         </div>
 </div>
 
+
 </main>
+

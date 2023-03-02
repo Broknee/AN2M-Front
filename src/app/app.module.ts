@@ -19,6 +19,8 @@ import { ListePatientComponent } from './liste-patient/liste-patient.component';
 import { FichePatientComponent } from './fiche-patient/fiche-patient.component';
 import { AjouterPatientComponent } from './ajouter-patient/ajouter-patient.component';
 import { ModifierPatientComponent } from './modifier-patient/modifier-patient.component';
+import { ModalComponent } from './modal/modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -40,8 +42,9 @@ import { ModifierPatientComponent } from './modifier-patient/modifier-patient.co
     FichePatientComponent,
     AjouterPatientComponent,
     ModifierPatientComponent,
+    ModalComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, MatDialogModule],
   providers: [],
   bootstrap: [AppComponent],
 })
