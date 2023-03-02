@@ -6,7 +6,7 @@
         <div id="suiviPatient" [ngClass]="{'hidden':hidden}">
             <h2>Suivi Patient</h2>
             <h3>Commentaires récents :</h3>
-        <a id="suiviButton" routerLink="/suivi_patient/">Consulter le suivi</a>
+        <a id="suiviButton" routerLink="/suivi_patient/ {{selectedPatient$.id}}"  >Consulter le suivi</a>
          <button id="modalButton" (click)="openModal()"> Ajouter un commentaire </button>
         </div>
         

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserDtoPost} from '../models/personnel.model';
 import { Services } from '../services/services';
 
@@ -15,7 +16,7 @@ export class AjoutPersonnelComponent {
  
 
   //@Input() id!:Number  // on crée la variable ID 
-  constructor( private fb: FormBuilder,private service:Services ){ 
+  constructor( private fb: FormBuilder,private service:Services, private route:Router ){ 
     // on crée le constructeur composé du service et de la route
     
 
@@ -51,8 +52,9 @@ export class AjoutPersonnelComponent {
    this.service.postUser(this.ajoutPerson).subscribe({
      next: (data)=>console.log(data),
    error: err=>console.log(err)
+
  });
-   
+   this.route.navigateByUrl('/gestion_personnel')
 }
  
 }

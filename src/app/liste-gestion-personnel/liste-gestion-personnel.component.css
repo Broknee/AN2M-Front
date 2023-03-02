@@ -20,6 +20,10 @@
   
 }
 
+#liste {
+    overflow: scroll;
+}
+
 #recherche form {
     padding: 10px;
     font-size: 25px;

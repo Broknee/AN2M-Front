@@ -102,11 +102,15 @@ modifyUser(user:UserGet):Observable<UserGet>{
 }
 
 modifyPatient(patient:patientModel):Observable<patientModel>{
-  return this.http.post<patientModel>(this.urlPatient + 'modifPatient',patient);
+  return this.http.post<patientModel>(this.urlPatient + 'addPatient',patient);
 }
 
 getUsers(): Observable<UserGet[]>{
   return this.http.get<UserGet[]>(this.getUrl);  
+}
+
+getSuivi(id:Number): Observable<SuiviModel[]>{
+  return this.http.get<SuiviModel[]>(this.urlPatient+'Suivi_patient/' + id);  
 }
 
 

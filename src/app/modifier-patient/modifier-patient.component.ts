@@ -53,7 +53,32 @@ export class ModifierPatientComponent {
 
   }
 
- onSubmit(){
+ onSubmit(){  
+  if(this.modifPatientForm.value.nom)
+  { this.selectedPatient$.nom = this.modifPatientForm.value.nom}
+  if(this.modifPatientForm.value.prenom)
+  { this.selectedPatient$.prenom = this.modifPatientForm.value.prenom}
+  if(this.modifPatientForm.value.secu)
+  { this.selectedPatient$.secu = this.modifPatientForm.value.secu}
+  if(this.modifPatientForm.value.tel)
+  { this.selectedPatient$.tel = this.modifPatientForm.value.tel}
+  if(this.modifPatientForm.value.mail)
+  {this.selectedPatient$.mail = this.modifPatientForm.value.mail}
+  if(this.modifPatientForm.value.adresse)
+  { this.selectedPatient$.adresse = this.modifPatientForm.value.adresse}
+  if(this.modifPatientForm.value.raison_sejour)
+  { this.selectedPatient$.raison_sejour = this.modifPatientForm.value.raison_sejour}
+  if(this.modifPatientForm.value.date_entree)
+  { this.selectedPatient$.date_entree = this.modifPatientForm.value.date_entree}
+  if(this.modifPatientForm.value.date_sortie)
+  { this.selectedPatient$.date_sortie = this.modifPatientForm.value.date_sortie}
+  if(this.modifPatientForm.value.nom_urgent)
+  { this.selectedPatient$.nom_urgent = this.modifPatientForm.value.nom_urgent}
+  if(this.modifPatientForm.value.prenom_urgent)
+  { this.selectedPatient$.prenom_urgent = this.modifPatientForm.value.prenom_urgent}
+  if(this.modifPatientForm.value.tel_urgent)
+  { this.selectedPatient$.tel_urgent = this.modifPatientForm.value.tel_urgent}
+  console.log(this.modifPatientForm.value.date_entree)
  this.service.modifyPatient(this.selectedPatient$).subscribe({
   next: (data)=>console.log(data),
 error: err=>console.log(err)

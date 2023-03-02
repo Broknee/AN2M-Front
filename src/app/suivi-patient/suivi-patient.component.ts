@@ -18,12 +18,12 @@ export class SuiviPatientComponent {
 constructor(private service : Services, private route: ActivatedRoute ) {}
 
 ngOnInit(): void { 
-  this.id=this.route.snapshot.params["id"] 
   // this.patient = this.service.getlistePatientbyId(this.id);  
   // this.commentsListById = this.service.getCommentsListById(this.id);
   // console.log(this.commentsListById);
-  this.service.selectedSuivi$.subscribe((value) => {
-    this.service.selectedSuivi$ = value;
-})
-}}
-
+  this.service.getSuivi(this.id).subscribe(
+  data=>{console.log(data);
+  this.commentsListById=data;}
+);
+}
+}
