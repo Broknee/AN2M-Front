@@ -1,5 +1,5 @@
 export class patientModel {
-    id!:Number
+    id!:number
     nom!:String
     prenom!:String
     secu!:String

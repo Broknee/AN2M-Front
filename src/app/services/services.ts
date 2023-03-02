@@ -2,10 +2,9 @@ import { Injectable } from "@angular/core";
 import {UserDtoPost, UserGet} from "../models/personnel.model";
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { BedModel } from "../models/bed.model";
+// import { BedModel } from "../models/bed.model";
 import { RoomModel } from "../models/room.model";
 import { patientModel } from "../models/patient.model";
-import { SuiviModel } from "../models/suivi.model";
 import { SuiviModel } from "../models/suivi.model";
 
 
@@ -65,27 +64,27 @@ selectedSuivi$ = this.suivi$.asObservable();
 //       return listePatient;
 // }
 
-getCommentsListById(id:Number) : SuiviModel[] {
-  let commentsListById:SuiviModel[] = [];
-  for (let i = 0; i < commentsList.length; i++) {
-    if (commentsList[i].patientid == id) {
-      commentsListById.push(commentsList[i]);
-    }
-  }
-  return commentsListById;
-}
+// getCommentsListById(id:Number) : SuiviModel[] {
+//   let commentsListById:SuiviModel[] = [];
+//   for (let i = 0; i < commentsList.length; i++) {
+//     if (commentsList[i].patientid == id) {
+//       commentsListById.push(commentsList[i]);
+//     }
+//   }
+//   return commentsListById;
+// }
 
-getlistePatientbyId(id:Number) :patientModel {
-  let patientId!:patientModel
+// getlistePatientbyId(id:Number) :patientModel {
+//   let patientId!:patientModel
 
-  for(let i=0;i<listePatients.length;i++){
-    if(listePatients[i].id == id) {
-      patientId = listePatients[i];
-    }
+//   for(let i=0;i<listePatients.length;i++){
+//     if(listePatients[i].id == id) {
+//       patientId = listePatients[i];
+//     }
     
-  }
-    return patientId;
-}
+//   }
+//     return patientId;
+// }
 
 
 private baseUrlpost = "http://localhost:8080/api/save";
@@ -128,9 +127,9 @@ getRoomsList() : RoomModel[] {
   return roomsList;
 }
 
-getBedsList() : BedModel[] {
-  return bedsList;
-}
+// getBedsList() : BedModel[] {
+//   return bedsList;
+// }
 
 }
 
@@ -261,181 +260,181 @@ getBedsList() : BedModel[] {
       }
     ]
 
-    export const commentsList : SuiviModel[] =
-    [
-        {  
+//     export const commentsList : SuiviModel[] =
+//     [
+//         {  
            
-            id:1,
-            comment : "Piqûre à 8h, chambre 301, le patient a fait une réaction allergique au produit injecté, changement de traitement.",
-            user_id : 1,
-            patient_id : 1,
-            date:"2023-02-10"
-          },
+//             id:1,
+//             comment : "Piqûre à 8h, chambre 301, le patient a fait une réaction allergique au produit injecté, changement de traitement.",
+//             user_id : 1,
+//             patient_id : 1,
+//             date:"2023-02-10"
+//           },
     
-          {  
+//           {  
            
-            id:2,
-            comment : "Piqûre à 8h, chambre 301, le patient a fait une réaction allergique au produit injecté, changement de traitement.",
-            user_id : 4,
-            patient_id : 2,
-            date:"2023-02-11"
-          },
+//             id:2,
+//             comment : "Piqûre à 8h, chambre 301, le patient a fait une réaction allergique au produit injecté, changement de traitement.",
+//             user_id : 4,
+//             patient_id : 2,
+//             date:"2023-02-11"
+//           },
     
-          {  
+//           {  
            
-            id:3,
-            comment : "Piqûre à 10h",
-            user_id : 4,
-            patient_id : 2,
-            date:"2023-02-11"
-          },
+//             id:3,
+//             comment : "Piqûre à 10h",
+//             user_id : 4,
+//             patient_id : 2,
+//             date:"2023-02-11"
+//           },
     
-          {  
+//           {  
            
-            id:4,
-            comment : "Piqûre à 11h",
-            user_id : 1,
-            patient_id : 2,
-            date:"2023-02-12"
-          },
+//             id:4,
+//             comment : "Piqûre à 11h",
+//             user_id : 1,
+//             patient_id : 2,
+//             date:"2023-02-12"
+//           },
     
-          {  
+//           {  
            
-            id:4,
-            comment : "Piqûre à 12h",
-            user_id : 4,
-            patient_id : 2,
-            date:"2023-02-12"
-          },
+//             id:4,
+//             comment : "Piqûre à 12h",
+//             user_id : 4,
+//             patient_id : 2,
+//             date:"2023-02-12"
+//           },
           
         
-        ]
+//         ]
 
-    export const bedsList : BedModel[] =
-[
-  {
-    id:1,
-    status:"occupé",
-    room_id:301,
-    patient_id:1
-  },
-  {
-    id:2,
-    status:"libre",
-    room_id:301,
-    patient_id:0
-  },
-  {
-    id:3,
-    status:"libre",
-    room_id:301,
-    patient_id:0
-  },
+//     export const bedsList : BedModel[] =
+// [
+//   {
+//     id:1,
+//     status:"occupé",
+//     room_id:301,
+//     patient_id:1
+//   },
+//   {
+//     id:2,
+//     status:"libre",
+//     room_id:301,
+//     patient_id:0
+//   },
+//   {
+//     id:3,
+//     status:"libre",
+//     room_id:301,
+//     patient_id:0
+//   },
 
-  {
-    id:4,
-    status:"libre",
-    room_id:302,
-    patient_id:0
-  },
+//   {
+//     id:4,
+//     status:"libre",
+//     room_id:302,
+//     patient_id:0
+//   },
 
-  {
-    id:5,
-    status:"libre",
-    room_id:302,
-    patient_id:0
-  },
+//   {
+//     id:5,
+//     status:"libre",
+//     room_id:302,
+//     patient_id:0
+//   },
 
-  {
-    id:6,
-    status:"libre",
-    room_id:302,
-    patient_id:0
-  },
+//   {
+//     id:6,
+//     status:"libre",
+//     room_id:302,
+//     patient_id:0
+//   },
 
 
-  {
-    id:7,
-    status:"libre",
-    room_id:303,
-    patient_id:0
-  },
+//   {
+//     id:7,
+//     status:"libre",
+//     room_id:303,
+//     patient_id:0
+//   },
 
-  {
-    id:8,
-    status:"libre",
-    room_id:303,
-    patient_id:0
-  }, 
+//   {
+//     id:8,
+//     status:"libre",
+//     room_id:303,
+//     patient_id:0
+//   }, 
   
-  {
-    id:9,
-    status:"libre",
-    room_id:303,
-    patient_id:0
-  }, 
+//   {
+//     id:9,
+//     status:"libre",
+//     room_id:303,
+//     patient_id:0
+//   }, 
   
-  {
-    id:10,
-    status:"libre",
-    room_id:304,
-    patient_id:0
-  }, 
+//   {
+//     id:10,
+//     status:"libre",
+//     room_id:304,
+//     patient_id:0
+//   }, 
   
-  {
-    id:11,
-    status:"libre",
-    room_id:304,
-    patient_id:0
-  }, 
+//   {
+//     id:11,
+//     status:"libre",
+//     room_id:304,
+//     patient_id:0
+//   }, 
   
-  {
-    id:12,
-    status:"libre",
-    room_id:304,
-    patient_id:0
-  }, 
+//   {
+//     id:12,
+//     status:"libre",
+//     room_id:304,
+//     patient_id:0
+//   }, 
   
-  {
-    id:13,
-    status:"libre",
-    room_id:305,
-    patient_id:0
-  }, 
+//   {
+//     id:13,
+//     status:"libre",
+//     room_id:305,
+//     patient_id:0
+//   }, 
   
-  {
-    id:14,
-    status:"libre",
-    room_id:305,
-    patient_id:0
-  }, 
+//   {
+//     id:14,
+//     status:"libre",
+//     room_id:305,
+//     patient_id:0
+//   }, 
   
-  {
-    id:15,
-    status:"libre",
-    room_id:305,
-    patient_id:0
-  },
+//   {
+//     id:15,
+//     status:"libre",
+//     room_id:305,
+//     patient_id:0
+//   },
 
-  {
-    id:16,
-    status:"libre",
-    room_id:306,
-    patient_id:0
-  }, 
+//   {
+//     id:16,
+//     status:"libre",
+//     room_id:306,
+//     patient_id:0
+//   }, 
   
-  {
-    id:17,
-    status:"libre",
-    room_id:306,
-    patient_id:0
-  }, 
+//   {
+//     id:17,
+//     status:"libre",
+//     room_id:306,
+//     patient_id:0
+//   }, 
   
-  {
-    id:18,
-    status:"occupé",
-    room_id:306,
-    patient_id:2
-  }
+//   {
+//     id:18,
+//     status:"occupé",
+//     room_id:306,
+//     patient_id:2
+//   }
 
-]
+// ]

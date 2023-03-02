@@ -7,17 +7,11 @@
             <h2>Suivi Patient</h2>
             <h3>Commentaires récents :</h3>
         <a id="suiviButton" routerLink="/suivi_patient/">Consulter le suivi</a>
-        <a id="suiviButton" (click)="ajoutCommentaire()">commentaire</a>
+         <button id="modalButton" (click)="openModal()"> Ajouter un commentaire </button>
         </div>
         
-            <h3>Commentaires récents :</h3> 
-            <div *ngFor="let suivi of commentsListById.slice(commentsListById.length -3)">
-                <p class="comment">{{suivi.comment}}</p>
-            </div>
-        <a id="suiviButton" routerLink="/suivi_patient/{{patient.id}}" >Consulter le suivi</a>
-        <button id="modalButton" (click)="openModal()"> Ajouter un commentaire </button>
-    </div>
-
+       
+    
 
         <div  id="plusSuivi">
             <p>Suivi</p>
@@ -65,8 +59,7 @@
             <h3>Téléphone :</h3>
             <p>{{selectedPatient$.tel_urgent}}</p>
         </div>
-</div>
 
 
-</main>
+
 

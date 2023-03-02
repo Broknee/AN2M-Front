@@ -1,9 +1,10 @@
 <div id="modalCard">
   <header>
-      <h1>Suivi de {{patient.nom}} {{patient.prenom}} :</h1>
+      <h1>Suivi de {{selectedPatient$.nom}} {{selectedPatient$.prenom}} :</h1>
   </header>
-      <form action="">
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+      <form [formGroup]="ajoutComSuivi" (ngSubmit)="onSubmit()" >
+        <textarea formControlName="com" name="com" cols="50" rows="20"></textarea>
+        <button id="addComment" >Ajouter le commentaire</button>
       </form>
       <!-- <form [formGroup]="ajoutCommentaire" id="ajoutForm" (ngSubmit)="onSubmit()" >
         <label for="nom">Commentaire :</label>
@@ -13,6 +14,6 @@
       </form> -->
   <footer>
       <button id="closeModal" (click)="closeModal()">Fermer</button>
-      <button id="addComment">Ajouter le commentaire</button>
+      
   </footer>
 </div>

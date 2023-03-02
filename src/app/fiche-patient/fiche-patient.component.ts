@@ -54,24 +54,27 @@ Contactvisible() {
 }
 
 
-ajoutCommentaire() {
 
-    this.commentaire.com = "Piqure faite à 8h";
-    this.commentaire.patientid = this.id;
-    this.commentaire.usersid = 37;
-    this.service.addComSuivi(this.commentaire).subscribe(
-      data=>console.log(data)
-    )
-      console.log("COMMENTAIRE="+this.commentaire.com);
-}
 
 
 openModal() {
     this.dialogConfig.id = "modal";
     // this.dialogConfig.height = "600px";
     // this.dialogConfig.width = "650px";
-    this.dialogConfig.data = { patient : this.patient };
+    this.dialogConfig.data = { selectedPatient$ : this.selectedPatient$ };
     this.modalDialog = this.matDialog.open(ModalComponent, this.dialogConfig);
+}
+
+
+ajoutCommentaire() {
+
+  this.commentaire.com = "Piqure faite à 8h";
+  this.commentaire.patientid = this.id;
+  this.commentaire.usersid = 37;
+  this.service.addComSuivi(this.commentaire).subscribe(
+    data=>console.log(data)
+  )
+    console.log("COMMENTAIRE="+this.commentaire.com);
 }
 }
 
