@@ -13,14 +13,12 @@
                         <th>Commentaires</th>
                         <th>Infirmier</th>
                     </tr>
-                    <tr *ngFor="let suivi of commentsListById">
-                        <td class="firstTd"></td>
+                     <tr *ngFor="let suivi of commentsListById">
                         <td>{{suivi.com}}</td>
-                        <td>{{suivi.usersid}}</td>
-            
+                        <td>{{suivi.user.name}}</td>
+                    <tr>
+                        
                     </tr>
-             
-                    
                 </table>
 
 

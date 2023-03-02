@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SuiviModel } from '../models/suivi.model';
+import { listSuiviModel, SuiviModel } from '../models/suivi.model';
 import { Services } from '../services/services';
 
 @Component({
@@ -12,12 +12,13 @@ import { Services } from '../services/services';
 export class SuiviPatientComponent {
 
 @Input() id!:Number
-@Input() commentsListById!: SuiviModel[]
+@Input() commentsListById!: any
 @Input() selectedPatient$ !:SuiviModel
 
 constructor(private service : Services, private route: ActivatedRoute ) {}
 
 ngOnInit(): void { 
+  this.id=this.route.snapshot.params["id"] 
   // this.patient = this.service.getlistePatientbyId(this.id);  
   // this.commentsListById = this.service.getCommentsListById(this.id);
   // console.log(this.commentsListById);

@@ -3,7 +3,7 @@ import { Input, OnInit } from '@angular/core';
 
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { patientModel } from '../models/patient.model';
 import { SuiviModel } from '../models/suivi.model';
 import { Services } from '../services/services';
@@ -41,7 +41,6 @@ ngOnInit(): void {
 
   onSubmit() {
   
-
       this.commentaire.com = this.ajoutComSuivi.value.com;
       this.commentaire.patientid = this.selectedPatient$.id;
       console.log(this.commentaire.patientid)

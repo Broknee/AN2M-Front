@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 // import { BedModel } from "../models/bed.model";
 import { RoomModel } from "../models/room.model";
 import { patientModel } from "../models/patient.model";
-import { SuiviModel } from "../models/suivi.model";
+import { listSuiviModel, SuiviModel } from "../models/suivi.model";
 
 
 
@@ -109,8 +109,8 @@ getUsers(): Observable<UserGet[]>{
   return this.http.get<UserGet[]>(this.getUrl);  
 }
 
-getSuivi(id:Number): Observable<SuiviModel[]>{
-  return this.http.get<SuiviModel[]>(this.urlPatient+'Suivi_patient/' + id);  
+getSuivi(id:Number): Observable<listSuiviModel[]>{
+  return this.http.get<listSuiviModel[]>(this.urlPatient+'Suivi_patient/' + id);  
 }
 
 
