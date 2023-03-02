@@ -1,6 +1,6 @@
 export class SuiviModel {
     id!:number
-    comm!:string
-    users_id!:number
-    patient_id!:number
+    com!:string
+    usersid!:number
+    patientid!:number
 }

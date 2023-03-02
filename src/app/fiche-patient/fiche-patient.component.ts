@@ -51,20 +51,14 @@ Contactvisible() {
 
 ajoutCommentaire() {
 
-    this.commentaire.comm = "Piqure faite à 8h";
-    this.commentaire.patient_id = this.id;
-    this.commentaire.users_id = 37;
+    this.commentaire.com = "Piqure faite à 8h";
+    this.commentaire.patientid = this.id;
+    this.commentaire.usersid = 37;
     this.service.addComSuivi(this.commentaire).subscribe(
       data=>console.log(data)
     )
-      console.log("COMMENTAIRE="+this.commentaire.comm);
+      console.log("COMMENTAIRE="+this.commentaire.com);
 }
-
-
-
-
-
-
 
 
 }
