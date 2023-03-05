@@ -24,25 +24,26 @@
     overflow: scroll;
 }
 
-#recherche form {
-    padding: 10px;
-    font-size: 25px;
-    margin-right: 50px;
-   
+
+#search {
+    border: 1px solid black;
+    height: fit-content;
+    width: 50vw;
+    display: flex;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2vw;
+    background-color: rgb(217, 217, 217);
+    flex-wrap:wrap;
 }
 
-#recherche button {
-    width: 150px;
-    height: 30px;
-    border-radius: 15px;
-    background-color: rgb(32, 122, 205);
-    color:white;
-    font-size: 20px;
+#search input {
+    width:425px;
+    margin:10px;
+    border-radius: 2px;
 }
 
-#recherche label,select,input {
-        margin-right: 15px;
-}
 
 main {
     background-image: url(../../assets/images/staffBackground.webp);

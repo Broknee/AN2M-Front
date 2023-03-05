@@ -6,7 +6,7 @@ export class SuiviModel {
     com!:string
     usersid!:number
     patientid!:number
-    // date!:string
+
 }
 
 

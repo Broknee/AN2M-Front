@@ -13,9 +13,9 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dial
 })
 export class FichePatientComponent {
 
-  @Input() patient!: patientModel
+  @Input() patient!: patientModel[]
   @Input() id!:number
-  @Input() commentsListById!: any
+  @Input() commentsListById: any=null
   @Input() selectedPatient$ !:patientModel
   @Input() commentaire = new SuiviModel()
 
@@ -40,7 +40,7 @@ export class FichePatientComponent {
   data=>{console.log(data);
   this.commentsListById=data;}
 );
-this.getComRecent();
+// this.getComRecent();
   }
   hidden=true;
   Hidden=true;
@@ -69,7 +69,7 @@ openModal() {
     this.modalDialog.afterClosed().subscribe({
   next: data=>{this.commentaire=data
 
-  //this.commentaire.com = this.ajoutComSuivi.value.com;
+
   this.commentaire.patientid = this.selectedPatient$.id;
   console.log(this.commentaire.patientid)
   this.commentaire.usersid = 11;
@@ -79,9 +79,10 @@ if(this.commentaire.com){
     console.log(this.commentaire.usersid);
    
    } ,error:err=>console.log(err)});
+  
 
-
-  }}})
+  }}}
+  )
 
   
 

@@ -3,8 +3,8 @@ h2 {
 }
 
 #logo {
-    width: 100px;
-    height:100px;
+    width: 125px;
+    height:125px;
     margin-right:20px;
 }
 
@@ -14,5 +14,14 @@ h2 {
     height: 150px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:space-around;
+}
+
+.welcomeMessage button {
+    font-size: 20px;
+    width: 80px;
+    height: 30px;
+    background-color: red;
+    color: white;
+    border-radius: 20px;
 }

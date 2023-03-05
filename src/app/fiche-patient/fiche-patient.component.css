@@ -158,7 +158,12 @@ h1 {
         align-items: center;
     }
 
-    #plusSuivi,#plusContact, #contactsUrgence, #suiviPatient {
+
+    #suiviPatient {
+        height: 70%;
+    }
+
+    #plusSuivi,#plusContact, #contactsUrgence {
         height: 50%;
     }
 

@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import {UserDtoPost, UserGet} from "../models/personnel.model";
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-// import { BedModel } from "../models/bed.model";
 import { RoomModel } from "../models/room.model";
 import { patientModel } from "../models/patient.model";
 import { listSuiviModel, SuiviModel } from "../models/suivi.model";
@@ -59,43 +58,10 @@ selectedSuivi$ = this.suivi$.asObservable();
   getlistePersonnelbyId(id:Number) :UserGet {
   let personnelId!:UserGet
     
-    // for(let i=0;i<this.post.length;i++){
-    //   if(this.post[i].id == id) {
-    //     personnelId = this.post[i];
-    //     console.log(this.post[i])
-    //   }
-      
-    // }
       return personnelId;
     }
 
 
-
-//     getlistePatient() : patientModel[] {
-//       return listePatient;
-// }
-
-// getCommentsListById(id:Number) : SuiviModel[] {
-//   let commentsListById:SuiviModel[] = [];
-//   for (let i = 0; i < commentsList.length; i++) {
-//     if (commentsList[i].patientid == id) {
-//       commentsListById.push(commentsList[i]);
-//     }
-//   }
-//   return commentsListById;
-// }
-
-// getlistePatientbyId(id:Number) :patientModel {
-//   let patientId!:patientModel
-
-//   for(let i=0;i<listePatients.length;i++){
-//     if(listePatients[i].id == id) {
-//       patientId = listePatients[i];
-//     }
-    
-//   }
-//     return patientId;
-// }
 
 
 private baseUrlpost = "http://localhost:8080/api/save";

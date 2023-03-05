@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { BedModel } from '../models/bed.model';
 import { patientModel } from '../models/patient.model';
 import { map } from 'rxjs';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-gestion-lits',
@@ -20,10 +21,19 @@ export class GestionLitsComponent implements OnInit {
   @Input() rooms: RoomModel [];
   @Input() beds!: any ;
   @Input() patients!: patientModel [];
+  isClicked = false;
+  ajoutPatientLit : FormGroup;
   
-  constructor(private service : Services, private route : Router) {}
+  constructor(private fb: FormBuilder,private service : Services, private route : Router) {}
   
   ngOnInit(): void {
+
+
+    this.ajoutPatientLit = this.fb.group({
+      patient: [''],
+    });
+
+
     this.rooms=[]
     this.patients=[]
     
@@ -40,7 +50,19 @@ export class GestionLitsComponent implements OnInit {
    
     //this.beds = this.service.getBedsList();
     // this.patients = this.service.getlistePatient();
+
+   
+
   }
+
+
+
+
+  showdiv() {  
+    this.isClicked = !this.isClicked;  
+  }  
+
+
 
   getRoomsAndPatients(){
 let rooms=new Map();

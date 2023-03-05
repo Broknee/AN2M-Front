@@ -11,19 +11,11 @@
       >
     </div>
 
-    <div id="recherche">
-      <form action="">
-        <label>Rechercher par:</label>
-        <select name="type" id="type">
-          <option></option>
-          <option>Nom</option>
-          <option>Prénom</option>
-          <option>Mail</option>
-        </select>
-        <input type="text" />
-        <button>recherche</button>
-      </form>
-    </div>
+    <div id="search">
+      <p>Rechercher un salarié :</p>
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Veuillez entrer le nom, prénom ou email de la personne à rechercher">
+  </div>
+
     <div id="liste">
       <table>
         <tr>
@@ -33,7 +25,7 @@
           <th>métier</th>
         </tr>
         <tr></tr>
-        <tr class="liste" *ngFor="let person of users">
+        <tr class="liste" *ngFor="let person of users | filter:searchText">
           <td>{{ person.lastName }}</td>
           <td>{{ person.firstName }}</td>
           <td>{{ person.email }}</td>

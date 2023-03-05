@@ -5,10 +5,11 @@
     <div id="suiviPatient" [ngClass]="{ hidden: hidden }">
       <h2>Suivi Patient</h2>
       <h3>Commentaires récents :</h3>
-     <div *ngFor="let suivi of com">
+     <div *ngFor="let suivi of commentsListById">
       <tr>
-        <td>{{ suivi.com }}</td>
-        <td>{{ suivi.user.name }}</td>
+        <td>{{ suivi.com }} de : <hr></td>
+       
+        <td>{{ suivi.user.name }} <hr></td>
       </tr></div>
       <a id="suiviButton" routerLink="/suivi_patient/ {{ selectedPatient$.id }}"
         >Consulter le suivi</a
@@ -48,9 +49,9 @@
           <h3>Raison du séjour :</h3>
           <p>{{ selectedPatient$.raison_sejour }}</p>
           <h3>date d'arrivée :</h3>
-          <p>{{ selectedPatient$.date_entree }}</p>
+          <p>{{ selectedPatient$.date_entree | date :'dd-MM-yyyy' }}</p>
           <h3>date de départ :</h3>
-          <p>{{ selectedPatient$.date_sortie }}</p>
+          <p>{{ selectedPatient$.date_sortie | date :'dd-MM-yyyy' }}</p>
         </div>
       </div>
     </div>
