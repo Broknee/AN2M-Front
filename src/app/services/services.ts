@@ -98,11 +98,11 @@ selectedSuivi$ = this.suivi$.asObservable();
 // }
 
 
-private baseUrlpost = "http://localhost:8080/api/save";
-private getUrl = "http://localhost:8080/api/users";
-private baseUrlmodify= "http://localhost:8080/api/modifyUserInfo";
-private baseUrl = "http://localhost:8080/api/";
-private urlSuivi = "http://localhost:8080/api/suiviPatient";
+private baseUrlpost = "http://localhost:8081/api/save";
+private getUrl = "http://localhost:8081/api/users";
+private baseUrlmodify= "http://localhost:8081/api/modifyUserInfo";
+private baseUrl = "http://localhost:8081/api/";
+private urlSuivi = "http://localhost:8081/api/suiviPatient";
  
 
 constructor(private http: HttpClient) { }

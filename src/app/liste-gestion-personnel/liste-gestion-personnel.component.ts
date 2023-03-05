@@ -13,7 +13,7 @@ export class ListeGestionPersonnelComponent implements OnInit {
 
 
 @Input() users!: UserGet[];
-
+searchText!: any;
 
 
 
