@@ -18,7 +18,7 @@
         <label for="mail">mail</label>
         <input type="text" formControlName="mail" />
         <label for="mdp">mot de passe</label>
-        <input type="text" formControlName="adresse" />
+        <input type="password" formControlName="mdp" />
         <label for="role">rôle</label>
         <select name="role" formControlName="roles" id="role">
             <option value="">Veuillez choisir un rôle :</option>
@@ -28,7 +28,7 @@
         </select>
         <button id="b_connexion" >Valider</button>
         <div *ngIf="validErrors">{{Errors}}</div>
-      </form>
+        </form>
     </div>
     </div>
     </main>

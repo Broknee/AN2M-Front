@@ -1,65 +1,83 @@
 <app-header></app-header>
 
 <main>
-
-    <div class="backgroundOpacity container">
-        <div id="suiviPatient" [ngClass]="{'hidden':hidden}">
-            <h2>Suivi Patient</h2>
-            <h3>Commentaires récents :</h3>
-        <a id="suiviButton" routerLink="/suivi_patient/ {{selectedPatient$.id}}"  >Consulter le suivi</a>
-         <button id="modalButton" (click)="openModal()"> Ajouter un commentaire </button>
-        </div>
-        
-       
-    
-
-        <div  id="plusSuivi">
-            <p>Suivi</p>
-            <img src="../../assets/images/plus.png" (click)="Suivivisible()" *ngIf="Visibility"> 
-            <img src="../../assets/images/minus.png" (click)="Suivivisible()" *ngIf="!Visibility">
-        </div>
-       
-        <div id="infosPrincipales">
-            <h1>
-                {{selectedPatient$.prenom}} {{selectedPatient$.nom}}
-            </h1>
-            <br>
-            <div id="form">
-            <div id="form1">
-            <h3>N° sécurité sociale :</h3>
-            <p>{{selectedPatient$.secu}}</p>
-            <h3>Adresse :</h3>
-            <p>{{selectedPatient$.adresse}}</p>
-            <h3>n°téléphone</h3>
-            <p>{{selectedPatient$.tel}}</p>
-            </div>
-            <div id="form2">
-            <h3>Raison du séjour :</h3>
-            <p>{{selectedPatient$.raison_sejour}}</p>
-            <h3>date d'arrivée :</h3>
-            <p>{{selectedPatient$.date_entree}}</p>
-            <h3>date de départ :</h3>
-            <p>{{selectedPatient$.date_sortie}}</p>
-        </div>
-            </div>
+  <div class="backgroundOpacity container">
+    <div id="suiviPatient" [ngClass]="{ hidden: hidden }">
+      <h2>Suivi Patient</h2>
+      <h3>Commentaires récents :</h3>
+     <div *ngFor="let suivi of com">
+      <tr>
+        <td>{{ suivi.com }}</td>
+        <td>{{ suivi.user.name }}</td>
+      </tr></div>
+      <a id="suiviButton" routerLink="/suivi_patient/ {{ selectedPatient$.id }}"
+        >Consulter le suivi</a
+      >
+      <button id="modalButton" (click)="openModal()">
+        Ajouter un commentaire
+      </button>
     </div>
-        <div id="plusContact" >
-            <p>Contact Urgence</p>
-            <img  src="../../assets/images/plus.png" (click)="Contactvisible()"  *ngIf="visiblity" alt="icône plus">
-            <img src="../../assets/images/minus.png" (click)="Contactvisible()" *ngIf="!visiblity" alt="icône moins">
-            
+
+    <div id="plusSuivi">
+      <p>Suivi</p>
+      <img
+        src="../../assets/images/plus.png"
+        (click)="Suivivisible()"
+        *ngIf="Visibility"
+      />
+      <img
+        src="../../assets/images/minus.png"
+        (click)="Suivivisible()"
+        *ngIf="!Visibility"
+      />
+    </div>
+
+    <div id="infosPrincipales">
+      <h1>{{ selectedPatient$.prenom }} {{ selectedPatient$.nom }}</h1>
+      <br />
+      <div id="form">
+        <div id="form1">
+          <h3>N° sécurité sociale :</h3>
+          <p>{{ selectedPatient$.secu }}</p>
+          <h3>Adresse :</h3>
+          <p>{{ selectedPatient$.adresse }}</p>
+          <h3>n°téléphone</h3>
+          <p>{{ selectedPatient$.tel }}</p>
         </div>
-
-        <div id="contactsUrgence" [ngClass]="{'Hidden':Hidden}">
-            <h2>Contact d'urgence</h2>
-            <h3>Nom :</h3>
-            <p>{{selectedPatient$.nom_urgent}}</p>
-            <h3>Prénom :</h3>
-            <p>{{selectedPatient$.prenom_urgent}}</p>
-            <h3>Téléphone :</h3>
-            <p>{{selectedPatient$.tel_urgent}}</p>
+        <div id="form2">
+          <h3>Raison du séjour :</h3>
+          <p>{{ selectedPatient$.raison_sejour }}</p>
+          <h3>date d'arrivée :</h3>
+          <p>{{ selectedPatient$.date_entree }}</p>
+          <h3>date de départ :</h3>
+          <p>{{ selectedPatient$.date_sortie }}</p>
         </div>
+      </div>
+    </div>
+    <div id="plusContact">
+      <p>Contact Urgence</p>
+      <img
+        src="../../assets/images/plus.png"
+        (click)="Contactvisible()"
+        *ngIf="visiblity"
+        alt="icône plus"
+      />
+      <img
+        src="../../assets/images/minus.png"
+        (click)="Contactvisible()"
+        *ngIf="!visiblity"
+        alt="icône moins"
+      />
+    </div>
 
-
-
-
+    <div id="contactsUrgence" [ngClass]="{ Hidden: Hidden }">
+      <h2>Contact d'urgence</h2>
+      <h3>Nom :</h3>
+      <p>{{ selectedPatient$.nom_urgent }}</p>
+      <h3>Prénom :</h3>
+      <p>{{ selectedPatient$.prenom_urgent }}</p>
+      <h3>Téléphone :</h3>
+      <p>{{ selectedPatient$.tel_urgent }}</p>
+    </div>
+  </div>
+</main>

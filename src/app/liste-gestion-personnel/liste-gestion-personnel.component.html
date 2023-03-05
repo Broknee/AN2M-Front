@@ -1,48 +1,51 @@
 <app-header></app-header>
 <div id="titre">
-    <h1>Gestion du personnel</h1>
+  <h1>Gestion du personnel</h1>
 </div>
 
-
 <main>
-    <div class="backgroundOpacity container">
+  <div class="backgroundOpacity container">
     <div id="ajoutButton">
-      
-        <a routerLink="/ajout_personnel"><button>Ajouter un nouveau salarié</button></a>
+      <a routerLink="/ajout_personnel"
+        ><button>Ajouter un nouveau salarié</button></a
+      >
     </div>
 
     <div id="recherche">
-        <form action="">
-            <label>Rechercher par:</label>
-            <select name="type" id="type">
-                <option></option>
-                <option>Nom</option>
-                <option>Prénom</option>
-                <option>Mail</option>
-            </select>
-            <input type="text">
-            <button>recherche</button>
-        </form>
+      <form action="">
+        <label>Rechercher par:</label>
+        <select name="type" id="type">
+          <option></option>
+          <option>Nom</option>
+          <option>Prénom</option>
+          <option>Mail</option>
+        </select>
+        <input type="text" />
+        <button>recherche</button>
+      </form>
     </div>
     <div id="liste">
-        <table>
-            <tr>
-            <th>nom</th>
-            <th>prénom</th>
-            <th>mail</th>
-            <th>métier</th>
-            </tr>
-            <tr>
-     <tr class="liste" *ngFor="let person of users"> 
-        <td>{{ person.firstName}}</td>
-        <td>{{ person.lastName }}</td>
-        <td>{{ person.email }}</td>
-        <td>{{ person.roles[0]}}</td>
-        <td><a (click)="modifier(person)"><button id="modifier">Modifier</button></a></td>
-       <td><button id="supprimer">Supprimer</button></td>
-     </tr>
-</table>
-</div>
-</div>
-</main> 
-  
+      <table>
+        <tr>
+          <th>nom</th>
+          <th>prénom</th>
+          <th>mail</th>
+          <th>métier</th>
+        </tr>
+        <tr></tr>
+        <tr class="liste" *ngFor="let person of users">
+          <td>{{ person.lastName }}</td>
+          <td>{{ person.firstName }}</td>
+          <td>{{ person.email }}</td>
+          <td>{{ person.roles[0] }}</td>
+          <td>
+            <a (click)="modifier(person)"
+              ><button id="modifier">Modifier</button></a
+            >
+          </td>
+          <td><button id="supprimer">Supprimer</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</main>

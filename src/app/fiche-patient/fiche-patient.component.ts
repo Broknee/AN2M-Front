@@ -15,9 +15,11 @@ export class FichePatientComponent {
 
   @Input() patient!: patientModel
   @Input() id!:number
-  @Input() commentsListById!: SuiviModel[]
+  @Input() commentsListById!: any
   @Input() selectedPatient$ !:patientModel
   @Input() commentaire = new SuiviModel()
+
+  com:any
 
 
   dialogConfig = new MatDialogConfig();
@@ -26,6 +28,7 @@ export class FichePatientComponent {
   constructor(private service : Services, private route: ActivatedRoute,public matDialog: MatDialog ) {}
 
   ngOnInit(): void { 
+  
     this.id=this.route.snapshot.params["id"] 
     // this.patient = this.service.getlistePatientbyId(this.id);  
     // this.commentsListById = this.service.getCommentsListById(this.id);
@@ -33,7 +36,11 @@ export class FichePatientComponent {
     this.service.selectedPatient$.subscribe((value) => {
       this.selectedPatient$ = value;
   })
-
+  this.service.getSuivi(this.id).subscribe(
+  data=>{console.log(data);
+  this.commentsListById=data;}
+);
+this.getComRecent();
   }
   hidden=true;
   Hidden=true;
@@ -52,10 +59,6 @@ Contactvisible() {
   if(this.visiblity==false)  this.visiblity=true;
   else this.visiblity=false;
 }
-
-
-
-
 
 openModal() {
     this.dialogConfig.id = "modal";
@@ -91,20 +94,16 @@ if(this.commentaire.com){
 }
 
 
-    }
-
-
+getComRecent():any {
+      let com:any;
+      for(let i=this.commentsListById.length-1;i>0;i--){
+        com.push(this.commentsListById[i])
+}  
+   this.com=com;
+    console.log(this.com)  
+  
+  }
     
-
-
-
-
-
-
-
-
-
-
-
+  }
 
 

@@ -27,10 +27,20 @@ export class Services {
 private suivi$ =  new BehaviorSubject<any>({});
 selectedSuivi$ = this.suivi$.asObservable();
 
+// private comSuivi$ =  new BehaviorSubject<any>({});
+// selectedComSuivi$ = this.comSuivi$.asObservable();
+
+
+
 
   post !: UserGet[]
   get !:patientModel[]
   suivi!:SuiviModel[]
+
+
+  // setComSuivi(suivi:any){
+  //   this.comSuivi$.next(suivi);
+  // }
 
 
   setSuivi(suivi:any){
