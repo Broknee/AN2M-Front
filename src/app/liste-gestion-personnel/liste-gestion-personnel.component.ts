@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {  Router} from '@angular/router';
 import { UserGet } from '../models/personnel.model';
 import { Services } from '../services/services';
@@ -12,7 +12,7 @@ export class ListeGestionPersonnelComponent implements OnInit {
 
 
 
-users!: UserGet[];
+@Input() users!: UserGet[];
 
 
 
