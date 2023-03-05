@@ -16,10 +16,10 @@
 <main>
     <div class="containerRooms">
         <div class="room" *ngFor="let room of rooms">
-            <h2>Chambre {{room.id}}</h2>
+            <h2>Chambre {{room}}</h2>
             <div class="bedContainer">
                 <ng-container *ngFor="let bed of beds">
-                    <div class="bed" *ngIf="room.id === bed.room_id;">
+                    <div class="bed" *ngIf="room === bed.chambre.numero_chambre">
                         <div>
                             <div *ngIf="bed.status === 'libre'">
                                 <p>Lit n°{{bed.id}}</p>
@@ -28,10 +28,10 @@
                     <!-- Contenu de la carte -->
                             <div *ngIf="bed.status === 'occupé'" class="occupied">
                                 <div *ngFor="let patient of patients">
-                                    <div *ngIf="bed.patient_id === patient.id">
+                                    <div *ngIf="bed.patient=== patient">
                                         <p>Lit n°{{bed.id}}</p>
                                         <h3>{{patient.nom}} {{patient.prenom}}</h3>
-                                        <p>Date d'entrée <br> {{patient.date_sortie}} -->
+                                        <p>Date d'entrée <br> {{patient.date_sortie}} 
                                             <!-- {{ patient.arrivee | date: 'full'}}  -->
                                         </p>
                                         <p>Sortie prévue le <br> {{patient.date_entree}}</p>

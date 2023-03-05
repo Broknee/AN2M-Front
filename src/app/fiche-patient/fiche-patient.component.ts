@@ -63,20 +63,43 @@ openModal() {
     // this.dialogConfig.width = "650px";
     this.dialogConfig.data = { selectedPatient$ : this.selectedPatient$ };
     this.modalDialog = this.matDialog.open(ModalComponent, this.dialogConfig);
-}
+    this.modalDialog.afterClosed().subscribe({
+  next: data=>{this.commentaire=data
+
+  //this.commentaire.com = this.ajoutComSuivi.value.com;
+  this.commentaire.patientid = this.selectedPatient$.id;
+  console.log(this.commentaire.patientid)
+  this.commentaire.usersid = 11;
+if(this.commentaire.com){
+  this.service.addComSuivi(this.commentaire).subscribe({
+   next: data=>{console.log(data)
+    console.log(this.commentaire.usersid);
+   
+   } ,error:err=>console.log(err)});
 
 
-ajoutCommentaire() {
+  }}})
 
-  this.commentaire.com = "Piqure faite à 8h";
-  this.commentaire.patientid = this.id;
-  this.commentaire.usersid = 37;
-  this.service.addComSuivi(this.commentaire).subscribe(
-    data=>console.log(data)
-  )
+  
+
+
+
     console.log("COMMENTAIRE="+this.commentaire.com);
+    console.log(this.selectedPatient$.id);
+  
+
 }
-}
+
+
+    }
+
+
+    
+
+
+
+
+
 
 
 

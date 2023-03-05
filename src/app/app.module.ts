@@ -22,6 +22,7 @@ import { ModifierPatientComponent } from './modifier-patient/modifier-patient.co
 import { ModalComponent } from './modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     FichePatientComponent,
     AjouterPatientComponent,
     ModifierPatientComponent,
-    ModalComponent
+    ModalComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, MatDialogModule],
   providers: [],

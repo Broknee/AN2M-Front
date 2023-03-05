@@ -1,3 +1,4 @@
 export class RoomModel {
-    id!:Number
+    id!:number
+    numero_chambre!:number
 }

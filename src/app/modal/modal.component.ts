@@ -21,7 +21,7 @@ export class ModalComponent implements OnInit {
  @Input() selectedPatient$!: patientModel;
   ajoutComSuivi : FormGroup;
   commentaire= new  SuiviModel();
-  
+  emptyComment=false;
 
 
 constructor(private fb:FormBuilder, private dialog: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) private parentData: {selectedPatient$ : patientModel},private service:Services) {}
@@ -39,24 +39,14 @@ ngOnInit(): void {
 
 
 
-  onSubmit() {
-  
-      this.commentaire.com = this.ajoutComSuivi.value.com;
-      this.commentaire.patientid = this.selectedPatient$.id;
-      console.log(this.commentaire.patientid)
-      this.commentaire.usersid = 37;
-      this.service.addComSuivi(this.commentaire).subscribe(
-        data=>console.log(data)
-      )
-        console.log("COMMENTAIRE="+this.commentaire.com);
-        console.log(this.selectedPatient$.id);
-    
-
-    }
-
+  onSubmit() {  if(this.ajoutComSuivi.value.com){
+  this.dialog.close(this.ajoutComSuivi.value)}
+     else this.emptyComment=true;
+  }
 
 closeModal() {
-  this.dialog.close();
+this.ajoutComSuivi.value.com="";
+  this.dialog.close(this.ajoutComSuivi.value);
 }
 
 

@@ -1,6 +1,9 @@
+import { patientModel } from "./patient.model"
+import { RoomModel } from "./room.model"
+
 export class BedModel {
     id!:Number
     status!:string
-    room_id!:Number
-    patient_id!:Number
+    chambre!:RoomModel
+    patient!:patientModel
 }

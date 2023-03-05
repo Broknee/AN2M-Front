@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { patientModel } from '../models/patient.model';
 import { UserDtoPost } from '../models/personnel.model';
 import { Services } from '../services/services';
@@ -17,7 +18,7 @@ export class AjouterPatientComponent {
  
 
   //@Input() id!:Number  // on crée la variable ID 
-  constructor( private fb: FormBuilder,private service:Services ){ 
+  constructor( private fb: FormBuilder,private service:Services,private route:Router ){ 
     // on crée le constructeur composé du service et de la route
     
 
@@ -27,7 +28,7 @@ export class AjouterPatientComponent {
         prenom: [''],
         secu:[''],
         tel: [''],
-        mail: [''],
+        mail: ['',Validators.email],
         adresse:[''],
         raison_sejour:[''],
         date_entree:[''],
@@ -45,7 +46,8 @@ export class AjouterPatientComponent {
     onSubmit() {
       
       
-   this.ajoutPatient= this.ajoutPatientForm.value;
+   
+   
    this.ajoutPatient.nom = this.ajoutPatientForm.value.nom;
    this.ajoutPatient.prenom = this.ajoutPatientForm.value.prenom;
    this.ajoutPatient.secu = this.ajoutPatientForm.value.secu;
@@ -62,8 +64,9 @@ export class AjouterPatientComponent {
 
    console.log(this.ajoutPatient)
    this.service.addPatient(this.ajoutPatient).subscribe({
-    next: (data)=>console.log(data),
-  error: err=>console.log(err)
+    next: (data)=>console.log(data) ,
+  error: err=>this.route.navigateByUrl('/gestion_patient') ,
+  
 });
    
 }

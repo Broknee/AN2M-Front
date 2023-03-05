@@ -4,9 +4,11 @@
   </header>
     <form [formGroup]="ajoutComSuivi" (ngSubmit)="onSubmit()" >
       <textarea formControlName="com" name="com"></textarea>
+      <div *ngIf="(emptyComment) && onSubmit&&!ajoutComSuivi.value.com">le commentaire est vide</div>
       <footer>
         <button id="addComment">Ajouter le commentaire</button>
         <button id="closeModal" (click)="closeModal()">Fermer</button>
+       
       </footer>
     </form>
 </div>
