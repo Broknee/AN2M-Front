@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { patientModel } from '../models/patient.model';
-import { UserDtoPost } from '../models/personnel.model';
+
 import { Services } from '../services/services';
 
 @Component({
@@ -40,7 +40,7 @@ export class AjouterPatientComponent {
       });
      
   }
-  ngOnInit():void { }
+  ngOnInit():void {}
    
    
     onSubmit() {
@@ -62,7 +62,7 @@ export class AjouterPatientComponent {
    this.ajoutPatient.tel_urgent = this.ajoutPatientForm.value.tel_urgent;
   
 
-   console.log(this.ajoutPatient)
+   
    this.service.addPatient(this.ajoutPatient).subscribe({
     next: (data)=>console.log(data) ,
   error: err=>this.route.navigateByUrl('/gestion_patient') ,

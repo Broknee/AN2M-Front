@@ -25,6 +25,8 @@
 
 #form {
     margin-top: 5vh;
+    display: flex;
+    justify-content: center;
 }
 
 button {
@@ -54,10 +56,7 @@ input,select  {
 }
 
 
-#form {
-    display: flex;
-    justify-content: center;
-}
+
 
 main {
     background-image: url(../../assets/images/staffBackground.webp);
@@ -76,12 +75,6 @@ main {
     align-items: center;
 }
 
-#titre {
-    background-color: rgb(244, 244, 244);
-    text-align: center;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-}
 
 
 #erreur {

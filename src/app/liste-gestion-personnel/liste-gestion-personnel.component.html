@@ -32,10 +32,11 @@
           <td>{{ person.roles[0] }}</td>
           <td>
             <a (click)="modifier(person)"
-              ><button id="modifier">Modifier</button></a
-            >
+              ><button id="modifier">Modifier</button></a>
           </td>
-          <td><button id="supprimer">Supprimer</button></td>
+          <td>
+            <a (click)="supprimer(person)">
+          <button  id="supprimer">Supprimer</button></a></td>
         </tr>
       </table>
     </div>

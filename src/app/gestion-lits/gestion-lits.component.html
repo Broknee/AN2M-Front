@@ -37,7 +37,7 @@
                   <button>Valider</button>
                 </form>
               </div>
-              <!-- Contenu de la carte -->
+           
               <div *ngIf="bed.status === 'occupé'" class="occupied">
                 <div *ngFor="let patient of patients">
                   <div *ngIf="bed.patient === patient">
@@ -46,7 +46,7 @@
                     <p>
                       Date d'entrée <br />
                       {{ patient.date_sortie  | date :'dd-MM-yyyy' }}
-                      <!-- {{ patient.arrivee | date: 'full'}}  -->
+                    
                     </p>
                     <p>
                       Sortie prévue le <br />
@@ -58,8 +58,7 @@
             </div>
           </div>
         </ng-container>
-        <!-- <div class="bed"></div>
-                <div class="bed"></div> -->
+
       </div>
     </div>
   </div>

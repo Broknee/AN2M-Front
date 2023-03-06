@@ -33,10 +33,7 @@ export class AjoutPersonnelComponent {
       roles: [''],
     });
   }
-  ngOnInit(): void {
-
-    
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
 
@@ -56,8 +53,6 @@ export class AjoutPersonnelComponent {
       this.ajoutPerson.lastName = this.ajoutPersoForm.value.nom;
       this.ajoutPerson.firstName = this.ajoutPersoForm.value.prenom;
       this.ajoutPerson.email = this.ajoutPersoForm.value.mail;
-
-      console.log(this.ajoutPerson);
 
       this.service.postUser(this.ajoutPerson).subscribe({
         next: (data) => console.log(data),

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { patientModel } from '../models/patient.model';
-import { listSuiviModel, SuiviModel } from '../models/suivi.model';
+import { SuiviModel } from '../models/suivi.model';
 import { Services } from '../services/services';
 
 @Component({

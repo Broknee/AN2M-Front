@@ -1,5 +1,5 @@
 import { ModalComponent } from './../modal/modal.component';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { patientModel } from '../models/patient.model';
 import { Services } from '../services/services';
 import { ActivatedRoute } from '@angular/router';
@@ -30,9 +30,6 @@ export class FichePatientComponent {
   ngOnInit(): void { 
   
     this.id=this.route.snapshot.params["id"] 
-    // this.patient = this.service.getlistePatientbyId(this.id);  
-    // this.commentsListById = this.service.getCommentsListById(this.id);
-    // console.log(this.commentsListById);
     this.service.selectedPatient$.subscribe((value) => {
       this.selectedPatient$ = value;
   })
@@ -40,7 +37,7 @@ export class FichePatientComponent {
   data=>{console.log(data);
   this.commentsListById=data;}
 );
-// this.getComRecent();
+
   }
   hidden=true;
   Hidden=true;
@@ -62,8 +59,6 @@ Contactvisible() {
 
 openModal() {
     this.dialogConfig.id = "modal";
-    // this.dialogConfig.height = "600px";
-    // this.dialogConfig.width = "650px";
     this.dialogConfig.data = { selectedPatient$ : this.selectedPatient$ };
     this.modalDialog = this.matDialog.open(ModalComponent, this.dialogConfig);
     this.modalDialog.afterClosed().subscribe({
@@ -71,12 +66,11 @@ openModal() {
 
 
   this.commentaire.patientid = this.selectedPatient$.id;
-  console.log(this.commentaire.patientid)
   this.commentaire.usersid = 11;
 if(this.commentaire.com){
   this.service.addComSuivi(this.commentaire).subscribe({
    next: data=>{console.log(data)
-    console.log(this.commentaire.usersid);
+
    
    } ,error:err=>console.log(err)});
   
@@ -84,13 +78,6 @@ if(this.commentaire.com){
   }}}
   )
 
-  
-
-
-
-    console.log("COMMENTAIRE="+this.commentaire.com);
-    console.log(this.selectedPatient$.id);
-  
 
 }
 
@@ -101,7 +88,7 @@ getComRecent():any {
         com.push(this.commentsListById[i])
 }  
    this.com=com;
-    console.log(this.com)  
+
   
   }
     

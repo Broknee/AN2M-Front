@@ -36,12 +36,12 @@ modifier(person:any) {
   this.service.post=this.users;
   this.service.setUser(person)
   this.route.navigateByUrl('modifier_personnel/'+person.id)
-    
-  
-  
 }
 
-
-
+supprimer(person:any) {
+  this.service.suppUsers(person.id).subscribe(data=>{
+    console.log(data)
+  })
+}
 
 }

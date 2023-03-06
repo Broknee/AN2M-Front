@@ -2,9 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import {  Services } from '../services/services';
 import { RoomModel } from '../models/room.model';
 import { Router } from '@angular/router';
-import { BedModel } from '../models/bed.model';
 import { patientModel } from '../models/patient.model';
-import { map } from 'rxjs';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -45,11 +43,7 @@ export class GestionLitsComponent implements OnInit {
     
     });
 
-    //console.log(this.beds.length)
 
-   
-    //this.beds = this.service.getBedsList();
-    // this.patients = this.service.getlistePatient();
 
    
 
@@ -59,7 +53,8 @@ export class GestionLitsComponent implements OnInit {
 
 
   showdiv() {  
-    this.isClicked = !this.isClicked;  
+    this.isClicked = !this.isClicked; 
+    
   }  
 
 

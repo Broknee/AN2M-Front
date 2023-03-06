@@ -17,9 +17,9 @@ export class ModifierPersonnelComponent implements OnInit {
 
    @Input() selectedUser$ !:UserGet
 
- // @Input() id!:Number  // on crée la variable ID 
+
   constructor( private fb: FormBuilder,private service:Services, private route: ActivatedRoute, private router: Router ){ 
-    // on crée le constructeur composé du service et de la route
+
     {
 
       this.modifPersoForm = this.fb.group({
@@ -51,7 +51,6 @@ onSubmit() {
  { this.selectedUser$.firstName = this.modifPersoForm.value.prenom}
  if(this.modifPersoForm.value.mail)
  { this.selectedUser$.email = this.modifPersoForm.value.mail}
- console.log(this.selectedUser$)
  this.submitted = true;
  if (this.modifPersoForm.invalid) {
   return;
